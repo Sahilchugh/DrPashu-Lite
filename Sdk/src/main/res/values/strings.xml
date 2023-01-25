@@ -1,1 +1,650 @@
-<resources></resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Dr Pashu</string>
+    <string name="website_url" translatable="false">https://drpashu.com/</string>
+    <string name="play_store_link" translatable="false">https://lnkj.in/t/drpashu</string>
+    <string name="agora_app_id" translatable="false">bcff0c8af21848c9845e5b62692cc1c0</string>
+    <string name="razorpay_key_id" translatable="false">rzp_live_mPOjjzvzG08hts</string>
+
+    <string name="google">Google</string>
+    <string name="login_number">Login With Number</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="enter_number">Enter Mobile Number</string>
+    <string name="farm_name">Farm Name</string>
+    <string name="capacity">Capacity</string>
+    <string name="farm_location">Farm Location</string>
+    <string name="save">Save</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="tab1">Overdue</string>
+    <string name="tab2">Upcoming</string>
+    <string name="tab3">Completed</string>
+    <string name="vaccinations">Vaccinations</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="select_part">Click a Part</string>
+    <string name="select_farm">Select a Farm</string>
+    <string name="tail">Tail</string>
+    <string name="body">Body</string>
+    <string name="breast">Breast</string>
+    <string name="head">Head</string>
+    <string name="legs">Legs</string>
+    <string name="confirm">Confirm</string>
+    <string name="health">Health</string>
+    <string name="add_photos">Add Photos</string>
+    <string name="bullet" translatable="false">\u25CF</string>
+    <string name="add_videos">Add Videos</string>
+    <string name="send_for_analysis">Send for Analysis</string>
+    <string name="vaccination_3">Vaccination 3</string>
+    <string name="intramuscular">Intramuscular</string>
+    <string name="markhana">Markhana</string>
+    <string name="logout">Logout</string>
+    <string name="quantity">Quantity</string>
+    <string name="date_of_birth">Date of Birth of Animal</string>
+    <string name="vaccination_1">Vaccination 1</string>
+    <string name="water">Water</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="login">Login</string>
+    <string name="verify">Verify</string>
+    <string name="vaccination_2">Vaccination 2</string>
+    <string name="nasal_drop">Nasal drop</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="select_symptom">Please select a symptom</string>
+    <string name="upto_6_images">You can add up to 6 images</string>
+    <string name="soon">Coming soon</string>
+    <string name="feed">Feed</string>
+    <string name="change_language">Change Language</string>
+    <string name="signup">Signup</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="gender">Gender</string>
+    <string name="additional_info">Additional Info</string>
+    <string name="qualification_id">Qualification Id</string>
+    <string name="landline_number">Landline Number</string>
+    <string name="identity_number">Identity Number</string>
+    <string name="family_members">Family Members</string>
+    <string name="age">Age</string>
+    <string name="bank_number">Bank Account Number</string>
+    <string name="ifsc_code">Ifsc Code</string>
+    <string name="subsidy_information">Subsidy Information</string>
+    <string name="job_card_holder">Job Card Holder</string>
+    <string name="kissan_card_holder">Kissan Card Holder</string>
+    <string name="aadhar_number">Aadhar Card Number</string>
+    <string name="farmer_number">Farmer Card Number</string>
+    <string name="mother_name">Mother\'s Name</string>
+    <string name="loan">Loan</string>
+    <string name="loan_farm">Have you taken loan for this farm</string>
+    <string name="emi_per_month">EMI per Month</string>
+    <string name="duration_remaining">Duration Remaining</string>
+    <string name="farm_value_name">Farm Name</string>
+    <string name="profile">Profile</string>
+    <string name="months_remaining">Months Remaining</string>
+    <string name="finance">Finance</string>
+    <string name="country">Country</string>
+    <string name="farming_type">Farming Type</string>
+    <string name="state">State</string>
+    <string name="district">District</string>
+    <string name="pincode">Pincode</string>
+    <string name="mother_s_name">Mother\'s Name</string>
+    <string name="farmer_card_number">Farmer Card Number</string>
+    <string name="submit">Submit</string>
+    <string name="results">\tResults</string>
+    <string name="possible_disease">\tPossible Disease</string>
+    <string name="manage_farm">Manage Farm</string>
+    <string name="about_us">About us</string>
+    <string name="select_cooperative">Select Your Cooperative</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="profile_updated">Profile Updated Successfully</string>
+    <string name="add_animal_success">Animal Added Successfully</string>
+    <string name="update_vaccination_success">Vaccination Updated Successfully</string>
+    <string name="farmer_identity_number">Farmer\'s Identity Number</string>
+    <string name="dashboard_desc">This app provides a platform for the farmers to manage the health of the livestock and poultry farms. Each user can have multiple farms. The dashboard will provide a high-level view of the farms.</string>
+    <string name="click_here_to_get_started">Click here to get started</string>
+    <string name="add_farm">Add Farm</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="profit_this_month">This Month</string>
+    <string name="profit_for_the_farm">Total</string>
+    <string name="vaccine">Vaccine</string>
+    <string name="Farm_list">Farm List</string>
+    <string name="add_more_symptom">Add more symptom</string>
+    <string name="enter_symptoms">Enter symptoms</string>
+    <string name="manage_farm_desc">This module allows the user to add, delete and view farms. A coordinator or VLE can add an existing farmer and manage those farms.\n\nClick on the Add Farm button to proceed.</string>
+    <string name="add_farmer">Add Farmer</string>
+    <string name="farmer_s_age">Farmer\'s Age</string>
+    <string name="pan_card_number">Pan Card Number</string>
+    <string name="price_added">Price Added Successfully</string>
+    <string name="farm_delete_success">Farm Deleted Successfully</string>
+    <string name="farmer_deleted">Farmer Deleted Successfully</string>
+    <string name="vle_delete_success">Vle Deleted Successfully</string>
+    <string name="produce_desc">This module tracks the produce (eggs or milk). A default produce is estimated based on the breed and age of the livestock. If the produce is different from the estimate, click “Eggs produce” or “Milk produce”. To track the revenue from the sale of produce, click on “Sell Eggs” or “Sell milk”.</string>
+    <string name="feed_desc">This module tracks the feed used by the animal. A default feed is estimated based on the animal breed and age. If the feed used is different from the estimate, click on Add Feed. If you wish to purchase more feed, click on Buy Feed.</string>
+    <string name="vaccine_desc">Tracking of vaccinations is critical to the health of the farmer’s stock. This module tracks the status of the vaccinations and provides prompts for overdue vaccinations. These vaccinations are provided based on the animal and age.</string>
+    <string name="finance_desc">This module is used to manage the income &amp; expenditure of each farm. It provides a monthly summary of three Overall Income, Expenditure and Profit/Loss. A list of the last 10 transactions is provided.</string>
+    <string name="info_gov">Additional Info\nas per Govt rules</string>
+    <string name="select_symptoms">Select Symptoms</string>
+    <string name="all_head">All Head Symptoms</string>
+    <string name="all_body">All Body Symptoms</string>
+    <string name="all_legs">All Legs Symptoms</string>
+    <string name="all_tail">All Tail Symptoms</string>
+    <string name="buy_feed">Buy Feed</string>
+    <string name="add_feed">Add Feed</string>
+    <string name="vaccination">Vaccination</string>
+    <string name="date">Date</string>
+    <string name="type">Type</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="amount">Amount</string>
+    <string name="loading">Loading</string>
+    <string name="income">Income</string>
+    <string name="expenditure">Expenditure</string>
+    <string name="name">Name</string>
+    <string name="date_of_birth_farm">Date of Birth</string>
+    <string name="loan_taken">Loan Taken</string>
+    <string name="emi_month">Emi Per Month</string>
+    <string name="emi_remaining">Emi Remaining</string>
+    <string name="congrats_no_vaccines_pending">Congrats, no vaccines pending</string>
+    <string name="track_vaccine">Track vaccines on Overdue tab.</string>
+    <string name="please_add_a_photo_to_proceed">Please add a photo to proceed</string>
+    <string name="image_analysis">Image Analysis</string>
+    <string name="warning">Warning</string>
+    <string name="continue_analysis">Continue Analysis</string>
+    <string name="take_another_photo">Take Another Photo</string>
+    <string name="logout_message">Are you sure to logout?</string>
+    <string name="select_lang">Select Language</string>
+    <string name="symptoms_analysis">Symptoms</string>
+    <string name="treatment">Treatments</string>
+    <string name="breed">Breed</string>
+    <string name="produce">Produce</string>
+    <string name="profit_dashboard">Profit</string>
+    <string name="health_dashboard">Health</string>
+    <string name="add_val">Add</string>
+    <string name="sell_val">Sell</string>
+    <string name="verified">Verified</string>
+    <string name="select_value">Select Produce Quantity</string>
+    <string name="select_feed_value">Select Feed Quantity in kg</string>
+    <string name="select_animal_farm">Select a Animal</string>
+    <string name="enter_farm_name">Enter farm Name</string>
+    <string name="enter_quantity">Enter Quantity</string>
+    <string name="select_dob_animal">Select Date of Birth of Animal</string>
+    <string name="select_loan">Select loan option</string>
+    <string name="enter_emi_amount">Enter EMI Amount</string>
+    <string name="enter_duration_loan">Enter Duration of Loan</string>
+    <string name="emi_start_date">Emi Start Date</string>
+    <string name="total_emi_months">Total EMI Months</string>
+    <string name="name_your_farm">Name your farm</string>
+    <string name="emi_start_date_selection">Select Emi Start Date</string>
+    <string name="price_rupees">Price in Rupees</string>
+    <string name="please_enter_price">Please enter produce price</string>
+    <string name="remove_farm_list">Are you sure to delete this farm?</string>
+    <string name="remove_vle_list">Are you sure to remove this VLE from your farm?</string>
+    <string name="remove_farmer_list">Are you sure to remove this farmer?</string>
+    <string name="manage_produce">Manage Produce</string>
+    <string name="manage_feed">Manage Feed</string>
+    <string name="manage_vaccinations">Manage Vaccinations</string>
+    <string name="manage_finance">Manage Finance</string>
+    <string name="welcome_to_dr_pashu">Welcome to DrPashu</string>
+    <string name="manage_your_farm">Manage your Farm</string>
+    <string name="health_check">Health Check</string>
+    <string name="cancel">Cancel</string>
+    <string name="okay">Okay</string>
+    <string name="mark_done">Mark as done</string>
+    <string name="price_of_vaccine">Please enter the price of the Vaccination</string>
+    <string name="operation_ended">Operation Ended by user</string>
+    <string name="proceed">Proceed</string>
+    <string name="farm">Farm</string>
+    <string name="profile_first_name">Enter First Name</string>
+    <string name="profile_last_name">Enter Last Name</string>
+    <string name="profile_email">Enter Email Address</string>
+    <string name="profile_gender">Select Gender</string>
+    <string name="profile_farming_type">Select Farming Type</string>
+    <string name="profile_country">Enter country to proceed further</string>
+    <string name="profile_state">Enter state to proceed further</string>
+    <string name="profile_district">Enter District</string>
+    <string name="profile_pincode">Enter Pincode</string>
+    <string name="profile_address">Enter Address</string>
+    <string name="profile_allow_location">Please Allow Location to use this feature</string>
+    <string name="profile_number_error">Please enter a valid number</string>
+    <string name="profile_proceed_without_number">Are you sure to proceed further without number?</string>
+    <string name="stay">Stay</string>
+    <string name="otp">OTP</string>
+    <string name="profile_enter_otp">Please enter the OTP received on number</string>
+    <string name="profile_six_digit">Enter the six digit number</string>
+    <string name="authenication_successful">Authenication Successful</string>
+    <string name="wrong_otp">Wrong OTP! Please try Again</string>
+    <string name="price_not_empty_error">Price field must not be empty</string>
+    <string name="feed_updated">Feed Updated Successfully</string>
+    <string name="enter_price_feed">Please enter feed price</string>
+    <string name="lower_limit">Lower Limit</string>
+    <string name="upper_limit">Upper Limit</string>
+    <string name="connecting">Connecting</string>
+    <string name="enter_valid_otp">Please enter a valid otp</string>
+    <string name="updated_successfully">Updated Successfully</string>
+    <string name="profile_mother_name">Enter Mother Name</string>
+    <string name="profile_landline">Enter Landline Number</string>
+    <string name="profile_qualification_id">Select Qualification Id</string>
+    <string name="profile_identity_number">Enter Identity Number</string>
+    <string name="profile_number_of_members">Enter number of family members</string>
+    <string name="profile_age">Enter Age</string>
+    <string name="profile_bank_account">Enter Bank Account</string>
+    <string name="profile_ifsc_code">Enter Ifsc Code</string>
+    <string name="profile_pancard">Enter Pan Card Number</string>
+    <string name="profile_subsidy">Enter Subsidy Information</string>
+    <string name="profile_jobcard">Select Job Card option</string>
+    <string name="profile_kissan_card">Select Kissan Card option</string>
+    <string name="profile_aadhar_number">Enter Aadhar number</string>
+    <string name="profile_farmer_number">Enter Farmer number</string>
+    <string name="profile_image_updated">Image updated Successfully</string>
+    <string name="farmer_age">Farmer\'s Age</string>
+    <string name="error_select_animal">Please Select a Animal</string>
+    <string name="kg_value">kg</string>
+    <string name="update_available">Update Available</string>
+    <string name="update">Update</string>
+    <string name="later">Later</string>
+    <string name="try_again">Try Again</string>
+    <string name="update_error_message">Unable to connect with the server. Check your internet connection and try again.</string>
+    <string name="connection_error">Connection error</string>
+    <string name="skip_for_now">Skip for now</string>
+    <string name="consult_a_doctor">Consult a Doctor</string>
+    <string name="farmer_text">Animal Owner</string>
+    <string name="vet_text">I am a Vet</string>
+    <string name="appointment">Appointments</string>
+    <string name="revenue">Revenue</string>
+    <string name="history">History</string>
+    <string name="profile_select_language">Select at least one language</string>
+    <string name="profile_select_animal">Select at least one animal</string>
+    <string name="profile_enter_degree">Enter Degree Details</string>
+    <string name="profile_enter_specialization">Enter Specialization Details</string>
+    <string name="specialization_text">Mention &amp; Upload Your Specialization Degree</string>
+    <string name="degree_text">Mention &amp; Upload Your Degree</string>
+    <string name="animal_text">Select your Preferred Animals</string>
+    <string name="language_text">Select your Languages</string>
+    <string name="vet_signup">Vets Info</string>
+    <string name="continue_without_image">Continue Without Image</string>
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+    <string name="status_in_progress">In Progress</string>
+    <string name="completed">Completed</string>
+    <string name="active">Active</string>
+    <string name="missed">Missed</string>
+    <string name="note_consult">You will be connected to the best available Doctor</string>
+    <string name="hello_doctor">Hello</string>
+    <string name="consultations">Consultations</string>
+    <string name="location_error_message">Please allow Location Permission to continue the analysis</string>
+    <string name="call_accept">Accept</string>
+    <string name="call_decline">Decline</string>
+    <string name="incoming_call">Incoming Call</string>
+    <string name="end_call_message">Are you sure to end this call?</string>
+    <string name="end_call">End Call</string>
+    <string name="additional_details">Additional Details</string>
+    <string name="vle_description">This screen allows you to view the farm lots of another farmer. Once added, you will be able to sell eggs, buy feed and manage the finances of the farmer.</string>
+    <string name="search_farmer_by_number">Search Farmer By Number</string>
+    <string name="search">Search</string>
+    <string name="verification_code">Verification code</string>
+    <string name="send_code">Send Code</string>
+    <string name="animal">Animal</string>
+    <string name="symptom_list">Symptoms List</string>
+    <string name="animal_image">Animal Image</string>
+    <string name="prescription">Prescription</string>
+    <string name="update_prescription_note">Click on image to update prescription and text</string>
+    <string name="edit">Edit</string>
+    <string name="description_optional">Description (Optional)</string>
+    <string name="no_recent_call_history">No Recent Call History</string>
+    <string name="allow_permissions">Allow Permissions</string>
+    <string name="prescription_1_img">Add photo of your Prescription</string>
+    <string name="prescription_2_img">Add another photo of your Prescription</string>
+    <string name="skip">Skip</string>
+    <string name="allow_permission_message">Allow Permissions to Proceed</string>
+    <string name="please_select_vet_type">Please select a vet type</string>
+    <string name="add_photo_to_proceed">Please add a photo to proceed</string>
+    <string name="call_completed">The call has been completed</string>
+    <string name="call_started">Call started</string>
+    <string name="muted_call">muted this call</string>
+    <string name="calling">Calling</string>
+    <string name="call_connecting">Call Connecting</string>
+    <string name="upload_prescription_condition">Please update atleast one information to proceed further</string>
+    <string name="add_more_photo">Add more photo</string>
+    <string name="prescription_upload_success">Prescription Uploaded Successfully</string>
+    <string name="user_unavailable_message">The User is currently unable to answer/receive the call. You are redirected to the Dashboard.</string>
+    <string name="animal_image_upload">Upload Animal image</string>
+    <string name="no_doctor_available">All our Doctors are currently busy on another call. Please try again after some time.</string>
+    <string name="postmortem_image_upload">Upload Postmortem image (Optional)</string>
+    <string name="terms_condition_note">I have read and agree to the Terms and Conditions.</string>
+    <string name="terms_condition">Terms &amp; Conditions</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="profile_picture_updated">Profile Picture Updated Successfully</string>
+    <string name="call_history">Call History</string>
+    <string name="animal_mortality">Animal Mortality</string>
+    <string name="months">months</string>
+    <string name="company_doctor_available">Company Doctor</string>
+    <string name="opd_available">OPD</string>
+    <string name="specialists_available">Specialists</string>
+    <string name="family_doctor_available">Family Doctor</string>
+    <string name="government_doctor_available">Government Doctor</string>
+    <string name="dashboard_toolbar">\tDashboard</string>
+    <string name="add_farm_toolbar">\tAdd Farm</string>
+    <string name="vaccinations_toolbar">\tVaccinations</string>
+    <string name="health_toolbar">\tHealth</string>
+    <string name="add_photos_toolbar">\tAdd Photos</string>
+    <string name="feed_toolbar">\tFeed</string>
+    <string name="financeToolbar">\tFinance</string>
+    <string name="manageFarmToolbar">\tManage Farm</string>
+    <string name="addFarmerToolbar">\tAdd Farmer</string>
+    <string name="about_us_toolbar">\tAbout Us</string>
+    <string name="profileToolbar">\tProfile</string>
+    <string name="produce_toolbar">\tProduce</string>
+    <string name="consult_a_doctor_tollbar">\tConsult a Doctor</string>
+    <string name="history_toolbar">\tHistory</string>
+    <string name="revenue_toolbar">\tRevenue</string>
+    <string name="appointment_toolbar">\tAppointments</string>
+    <string name="prescription_toolbar">\tPrescription</string>
+    <string name="call_history_toolbar">\tCall History</string>
+    <string name="payment_toolbar">\tPayment</string>
+    <string name="start_call_toolbar">\tCall</string>
+    <string name="additional_details_toolbar">\tAdditional Details</string>
+    <string name="select_animal_toolbar">\tSelect Animal</string>
+    <string name="animal_mortality_toolbar">\tAnimal Mortality</string>
+    <string name="error_add_animal">Something went wrong- 01</string>
+    <string name="error_add_farmer">Something went wrong- 02</string>
+    <string name="error_animal_list">Unable to get list- 03</string>
+    <string name="error_completed_vaccination_list">Unable to get list- 04</string>
+    <string name="error_cooperative_list">Unable to get list- 05</string>
+    <string name="error_dashboard_list">Unable to get list- 06</string>
+    <string name="error_delete_farmer">Something went wrong- 07</string>
+    <string name="error_delete_farm">Something went wrong- 08</string>
+    <string name="error_produce_sale">Something went wrong- 09</string>
+    <string name="error_produce_data">Something went wrong- 10</string>
+    <string name="error_feed_data">Something went wrong- 11</string>
+    <string name="error_feed_buy">Something went wrong- 12</string>
+    <string name="error_finance_data">Something went wrong- 13</string>
+    <string name="error_profile_data">Something went wrong- 14</string>
+    <string name="error_login">Something went wrong- 15</string>
+    <string name="error_farm_list">Unable to get list- 16</string>
+    <string name="error_overdue_vaccination_list">Unable to get list- 17</string>
+    <string name="error_analysis_result">Something went wrong- 18</string>
+    <string name="error_search_data">Something went wrong- 19</string>
+    <string name="error_signup">Something went wrong- 20</string>
+    <string name="error_signup_optional">Something went wrong- 21</string>
+    <string name="error_symptoms_list">Unable to get list- 22</string>
+    <string name="error_transactions_list">Unable to get list- 23</string>
+    <string name="error_upcoming_vaccination_list">Unable to get list- 24</string>
+    <string name="error_produce_entry">Something went wrong- 25</string>
+    <string name="error_feed_entry">Something went wrong- 26</string>
+    <string name="error_update_language">Something went wrong- 27</string>
+    <string name="error_update_profile">Something went wrong- 28</string>
+    <string name="error_update_vaccination">Something went wrong- 29</string>
+    <string name="error_update_cards">Something went wrong- 30</string>
+    <string name="error_weather_data">Something went wrong- 31</string>
+    <string name="error_update_feed">Something went wrong- 32</string>
+    <string name="error_get_feed_data">Something went wrong- 33</string>
+    <string name="error_get_feed_lot">Unable to get list- 34</string>
+    <string name="error_update_produce">Something went wrong- 35</string>
+    <string name="error_get_produce_data">Something went wrong- 36</string>
+    <string name="error_get_produce_lot">Unable to get list- 37</string>
+    <string name="error_check_update">Something went wrong- 38</string>
+    <string name="error_update_vet_details">Something went wrong- 39</string>
+    <string name="error_get_vet_dashboard">Something went wrong- 40</string>
+    <string name="error_get_animals">Something went wrong- 41</string>
+    <string name="error_vet_list">Unable to get list- 42</string>
+    <string name="error_start_call">Something went wrong- 43</string>
+    <string name="error_upload_prescription">Something went wrong- 44</string>
+    <string name="error_call_history_list">Unable to get list- 45</string>
+    <string name="error_call_detail">Something went wrong- 46</string>
+    <string name="error_update_call_status">Something went wrong- 47</string>
+    <string name="error_update_profile_picture">Something went wrong- 48</string>
+    <string name="error_get_mortality_data">Something went wrong- 49</string>
+    <string name="error_get_disease_list">Something went wrong- 50</string>
+    <string name="error_add_mortality">Something went wrong- 51</string>
+    <string name="error_update_onboarding_status">Something went wrong- 52</string>
+    <string name="error_reject_call">Something went wrong- 53</string>
+    <string name="error_get_razorpay_order_id">Something went wrong- 54</string>
+    <string name="error_update_device_token">Something went wrong- 55</string>
+    <string name="error_call_back_user">Something went wrong- 56</string>
+    <string name="error_fetch_wallet_balance">Something went wrong- 57</string>
+    <string name="error_fetch_wallet_transaction">Something went wrong- 58</string>
+    <string name="error_add_coins_to_wallet">Something went wrong- 59</string>
+    <string name="error_user_search_list">Unable to get list- 60</string>
+    <string name="error_get_user_detail">Something went wrong- 61</string>
+    <string name="error_make_transaction_by_admin">Something went wrong- 62</string>
+    <string name="error_transaction_type_list">Unable to get list- 63</string>
+    <string name="error_call_user_by_id">Something went wrong- 64</string>
+    <string name="error_create_post">Something went wrong- 65</string>
+    <string name="error_fetch_adda_posts">Something went wrong- 66</string>
+    <string name="error_fetch_post_replies">Something went wrong- 67</string>
+    <string name="error_create_reply">Something went wrong- 68</string>
+    <string name="error_post_action">Something went wrong- 69</string>
+    <string name="error_search_adda_posts">Something went wrong- 70</string>
+    <string name="add_mortality_toolbar">\tAdd Mortality</string>
+    <string name="mortality_description">This module tracks the animal mortality (death) which may occur because of illness or similar reasons. This data is used to identify frequent diseases and prevent repetitions.</string>
+    <string name="upload_image_note">Click on the image to upload Profile Picture</string>
+    <string name="mortality_tracking">Mortality Tracking</string>
+    <string name="add_mortality">Add Mortality</string>
+    <string name="dead_animals">Dead Animals</string>
+    <string name="alive_animals">Alive Animals</string>
+    <string name="mortality">Mortality</string>
+    <string name="dont_know">Dont Know</string>
+    <string name="error_mortality_date">Select Mortality Date</string>
+    <string name="error_died_count">Enter Died count</string>
+    <string name="error_culled_count">Enter Culled count</string>
+    <string name="error_reason_mortality">Select Reason of Mortality</string>
+    <string name="error_upload_animal_image">Upload Animal Image</string>
+    <string name="select_reason_mortality">Select Reason of Mortality</string>
+    <string name="added_mortality_information">Added Mortality Information</string>
+    <string name="date_of_mortality">Date of Mortality</string>
+    <string name="died_count">Died Count</string>
+    <string name="culled_count">Culled Count</string>
+    <string name="reason_of_mortality">Reason of Mortality</string>
+    <string name="reason_for_culling_optional">Reason for Culling (Optional)</string>
+    <string name="upload_additional_image_optional">Upload Additional Image (Optional)</string>
+    <string name="delete">Delete</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="error_upload_degree">Upload Degree Image</string>
+    <string name="error_upload_registration_certificate">Upload Registration Certificate Image</string>
+    <string name="error_enter_registration_number">Enter Registration Number</string>
+    <string name="upload_govt_id_image">Upload Government Id Image</string>
+    <string name="error_enter_govt_id_number">Enter Government Id Number</string>
+    <string name="error_enter_pan_card">Enter Pan Card Number</string>
+    <string name="error_enter_bank_account">Enter Bank Account Number</string>
+    <string name="error_enter_ifsc_code">Enter Ifsc Code</string>
+    <string name="government_id_proof">Government ID Proof</string>
+    <string name="upload_registration_number">Mention &amp; Upload Registration Number</string>
+    <string name="onboarding_consultation_title_1">Welcome to DrPashu App – The Veterinarian in your Smartphone!</string>
+    <string name="onboarding_consultation_description_1">Click on the Three lines on the top-left.</string>
+    <string name="onboarding_consultation_title_2">Click on “Consult a Doctor”</string>
+    <string name="onboarding_consultation_description_2">We have the best doctors available with us.</string>
+    <string name="onboarding_consultation_title_3">Select your animal</string>
+    <string name="onboarding_consultation_description_3">For example, Click on “Chicken”</string>
+    <string name="onboarding_consultation_title_4">Well done. You have selected Chicken</string>
+    <string name="onboarding_consultation_description_4">Now, click on “Proceed” to see the available doctors.</string>
+    <string name="onboarding_consultation_title_5">Best Doctor from OPD category is selected for you.</string>
+    <string name="onboarding_consultation_description_5">Clicking on “Call a Doctor” will start the call. (In this demo, no call will be started).</string>
+    <string name="call_a_doctor">Call a Doctor</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="onboarding_done_message">You can start using the Application now.</string>
+    <string name="go_to_home">Go To home</string>
+    <string name="error_mortality_count">Mortality number should not be greater than farm size.</string>
+    <string name="error_update_status">Error Updating User status</string>
+    <string name="call_already_completed">The call is already completed</string>
+    <string name="check_animal_health">Check Animal Health</string>
+    <string name="documents_under_verification_status">Your documents are under verificatation. Call 9845556565 to get the status.</string>
+    <string name="error_status_update">Status not updated</string>
+    <string name="profile_enter_number">Enter Mobile Number</string>
+    <string name="profile_change_role">Click on Farmer/Vet icon to select User Role</string>
+    <string name="profile_verify_phone_number">Please verify your number to complete signup</string>
+    <string name="connecting_to_next_vet">We are connecting you to the next available vet</string>
+    <string name="farmer_ended_call">The user has ended this call</string>
+    <string name="missed_call">Missed Call</string>
+    <string name="missed_a_call">You have a missed call from</string>
+    <string name="payment_unsuccessful">Payment was not completed</string>
+    <string name="payment_success">Coins Added Successfully. Connecting you to the next available vet.</string>
+    <string name="pay">Pay</string>
+    <string name="start_your_call">Start your call</string>
+    <string name="and">and</string>
+    <string name="get_free_call_message">You are getting your free call worth</string>
+    <string name="user_busy">User is unable to answer the call. Please try again after some time.</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="my_wallet_toolbar">\tMy Wallet</string>
+    <string name="one_step_away">You are just 1 Step Away</string>
+    <string name="hang_on">Hang On...</string>
+    <string name="vet_will_be_there">A vet will be there with you shortly.</string>
+    <string name="animal_owner_will_be_there">Animal Owner will be there with you shortly.</string>
+    <string name="my_pashu_coins">My Pashu Coins</string>
+    <string name="add_coins_to_wallet">Add Coins to Wallet</string>
+    <string name="enter_number_of_coins">Enter number of coins</string>
+    <string name="note_1_pashu_coin_1">(Note: 1 Pashu Coin = ₹1)</string>
+    <string name="enter_coins_to_add">Enter Coins</string>
+    <string name="recent_transactions_wallet">Recent Transactions</string>
+    <string name="no_transactions_found">No Transactions found</string>
+    <string name="payment_done_adding_coins">Payment Successful. Adding coins to your wallet.</string>
+    <string name="proceed_to_pay">Proceed to pay</string>
+    <string name="coins_added_success">Coins Added Successfully</string>
+    <string name="coins">Coins</string>
+    <string name="welcome_gift">Welcome Gift</string>
+    <string name="transaction_call_credit">Credited for the call</string>
+    <string name="transaction_call_debit">Debited for the call</string>
+    <string name="session_expired">User Session Expired. Please Login Again!</string>
+    <string name="manage_your_schedule">Manage your schedule</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Th</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+    <string name="add_time">Add Time</string>
+    <string name="select_time_duration">Select Time Duration</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="too_many_slots">You have too many time slots, please delete the existing slots to add new</string>
+    <string name="select_day">Please select a day</string>
+    <string name="no_time_slot_added">No Time Slots Added</string>
+    <string name="start_time_less">Start time should not be greater than End time</string>
+    <string name="no_time_slot_selected">No Time Slot Selected</string>
+    <string name="your_opinion_matters_to_us">Your Opinion Matters!</string>
+    <string name="rating_message">We work super hard to serve you better and would love to know how would you rate our App?</string>
+    <string name="share_through_following_options">Share through following options:</string>
+    <string name="app_not_installed">Application not installed in your mobile</string>
+    <string name="rate_message">Hi! I use DrPashu app to instantly call expert Vets on video call from the comfort of my home. No need to leave my farm or home to keep my animals healthy! Use this invite from me and earn up to ₹50 worth PashuCoins. Hurry Now!</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="rate_us_toolbar">\tRate Us</string>
+    <string name="thanks_feedback">Thankyou for rating our app</string>
+    <string name="enter_graduation_year">Enter Graduation Year</string>
+    <string name="passing_year_bvsc">Please enter year of passing BVSc</string>
+    <string name="error_graduation_note">Vet cannot have future year of graduation.</string>
+    <string name="invalid_year">Invalid year</string>
+    <string name="field_cant_empty">Field cannot be empty</string>
+    <string name="select_the_animals_you_have">Select the animals you have</string>
+    <string name="no_permission">No Permission is Granted to user</string>
+    <string name="user_call_history">User Call History</string>
+    <string name="manage_wallet">Manage Wallet</string>
+    <string name="reference_number">Reference Number</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="remarks">Remarks</string>
+    <string name="create_transaction">Create Transaction</string>
+    <string name="user_wallet_transactions">User Wallet Transactions</string>
+    <string name="user_enter_reference_no">Enter Reference No</string>
+    <string name="user_enter_amount">Enter Amount</string>
+    <string name="user_enter_valid_amount">Enter valid Amount</string>
+    <string name="user_select_transaction_type">Please select Transaction Type</string>
+    <string name="user_insufficient_balance">User does not have sufficient balance to debit</string>
+    <string name="user_entter_remarks">Enter Remarks</string>
+    <string name="user_transaction_success">Transaction Created Successful</string>
+    <string name="role_farmer">Farmer</string>
+    <string name="role_vle">VLE</string>
+    <string name="role_vet">Vet</string>
+    <string name="role_admin">Admin</string>
+    <string name="enter_text">Please enter text</string>
+    <string name="no_records_found">No Records Found</string>
+    <string name="user_detail_toolbar">\tUser Information</string>
+    <string name="facing_payment_issues">Facing Payment issues?</string>
+    <string name="payment_message_1">Don\'t worry, we are here to help.</string>
+    <string name="payment_message_2">Message us and we will call you back.</string>
+    <string name="sorry_for_the_inconvenience">Sorry for the inconvenience</string>
+    <string name="contact_us">Contact us!</string>
+    <string name="document_verification_message">Your documents are under verification. Click on the whatsapp icon to message DrPashu team to get the status.</string>
+    <string name="post_a_comment">Post a comment</string>
+    <string name="post">Post</string>
+    <string name="no_comments">No Comments</string>
+    <string name="comments">Comments</string>
+    <string name="reply_added_success">Reply added successfully</string>
+    <string name="enter_reply_message">Please enter reply to post</string>
+    <string name="enter_message">Enter Message</string>
+    <string name="title_of_post">Title of Post</string>
+    <string name="upload_video">Upload Video</string>
+    <string name="create_post">Create Post</string>
+    <string name="post_submit_success">Post Submitted Successfully</string>
+    <string name="search_for_the_user">Search for the user</string>
+    <string name="search_for_the_post">Search for the Post</string>
+    <string name="farms">Farms</string>
+    <string name="pashu_coins_in_wallet">Pashu Coins in wallet</string>
+    <string name="coins_used_to_call">Coins used to complete call</string>
+    <string name="add_coins_to_call">Add coins to complete call</string>
+    <string name="no_posts_found">No Posts Found</string>
+    <string name="post_reported">Post Reported Successfully. You will no longer see the post in your feed</string>
+    <string name="report_post">Report</string>
+    <string name="report_this_post">Report this post?</string>
+    <string name="report_msg">Warning: If you misuse this feature, your account may be banned.\n\nAre you sure you want to report this post?</string>
+    <string name="report">Report</string>
+
+    <string-array name="gender_list">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="option_list">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="qualification_list">
+        <item>Illiterate</item>
+        <item>Literate but below primary</item>
+        <item>Lower Primary</item>
+        <item>Upper Primary</item>
+        <item>Secondary</item>
+        <item>Higher Sec. School</item>
+        <item>Graduate</item>
+        <item>Post Graduate</item>
+    </string-array>
+
+    <string-array name="farming_type" translatable="false">
+        <item>Agriculture</item>
+        <item>Horticulture</item>
+        <item>Fisheries</item>
+        <item>Poultry</item>
+        <item>Dairy</item>
+        <item>Tea</item>
+    </string-array>
+
+    <string-array name="language_list" translatable="false">
+        <item>English</item>
+        <item>Assamese (অসমীয়া)</item>
+        <item>Bengali (বাংলা)</item>
+        <item>Hindi (हिंदी)</item>
+        <item>Kannada (ಕನ್ನಡ)</item>
+        <item>Marathi (मराठी)</item>
+        <item>Tamil (தமிழ்)</item>
+        <item>Telugu (తెలుగు)</item>
+    </string-array>
+
+    <string-array name="language_list_vet" translatable="false">
+        <item>English</item>
+        <item>Assamese (অসমীয়া)</item>
+        <item>Bengali (বাংলা)</item>
+        <item>Hindi (हिंदी)</item>
+        <item>Kannada (ಕನ್ನಡ)</item>
+        <item>Marathi (मराठी)</item>
+        <item>Tamil (தமிழ்)</item>
+        <item>Telugu (తెలుగు)</item>
+        <item>Gujarati (ગુજરાતી)</item>
+        <item>Malayalam (മലയാളം)</item>
+        <item>Punjabi (ਪੰਜਾਬੀ)</item>
+        <item>Odia (ଓଡିଆ)</item>
+    </string-array>
+</resources>

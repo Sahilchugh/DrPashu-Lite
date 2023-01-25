@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_consult_doctor"
+        android:name="com.drpashu.sdk.ConsultDoctorFragment"
+        android:label="@string/consult_a_doctor_tollbar"
+        tools:layout="@layout/fragment_consult_doctor" >
+        <action
+            android:id="@+id/action_nav_consult_doctor_to_incomingCallFragment"
+            app:destination="@id/incomingCallFragment"
+            app:popUpTo="@id/nav_consult_doctor"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_my_wallet"
+        android:name="com.drpashu.sdk.MyWalletFragment"
+        android:label="@string/my_wallet_toolbar"
+        tools:layout="@layout/fragment_my_wallet" />
+
+    <fragment
+        android:id="@+id/nav_call_history"
+        android:name="com.drpashu.sdk.CallHistoryFragment"
+        android:label="@string/call_history_toolbar"
+        tools:layout="@layout/fragment_call_history" >
+        <action
+            android:id="@+id/action_nav_history_to_callDetailFragment"
+            app:destination="@id/callDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/incomingCallFragment"
+        android:name="com.drpashu.sdk.IncomingCallFragment"
+        android:label="Incoming Call"
+        tools:layout="@layout/fragment_incoming_call" >
+        <action
+            android:id="@+id/action_incomingCallFragment_to_prescriptionFragment"
+            app:destination="@id/prescriptionFragment"
+            app:popUpTo="@id/incomingCallFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/prescriptionFragment"
+        android:name="com.drpashu.sdk.PrescriptionFragment"
+        android:label="@string/prescription_toolbar"
+        tools:layout="@layout/fragment_prescription" />
+    <fragment
+        android:id="@+id/callDetailFragment"
+        android:name="com.drpashu.sdk.CallDetailFragment"
+        android:label="@string/call_history_toolbar"
+        tools:layout="@layout/fragment_call_detail" >
+        <action
+            android:id="@+id/action_callDetailFragment_to_incomingCallFragment"
+            app:destination="@id/incomingCallFragment"
+            app:popUpTo="@id/callDetailFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.drpashu.sdk.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_call_history"
+            app:destination="@id/nav_call_history" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_my_wallet"
+            app:destination="@id/nav_my_wallet" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_consult_doctor"
+            app:destination="@id/nav_consult_doctor" />
+    </fragment>
+</navigation>

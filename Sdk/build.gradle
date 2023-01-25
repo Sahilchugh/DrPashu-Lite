@@ -32,4 +32,28 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //Agora Audio-Video Call Library
+    implementation 'io.agora.rtc:full-rtc-basic:3.6.2'
+
+    //Retrofit Rest Api Library
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // lottie integration
+    implementation "com.airbnb.android:lottie:5.1.1"
+
+    //Razorpay Payment Gateway
+    implementation 'com.razorpay:checkout:1.6.26'
+
+    //Imageview zoom Library
+    implementation 'com.github.MikeOrtiz:TouchImageView:1.4.1'
 }

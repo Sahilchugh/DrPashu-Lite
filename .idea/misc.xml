@@ -3,7 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/button_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/button_bg_curve.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/button_bg_signup.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/dashboard_card_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_call_doctor_result.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_call_reject.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_camera_off.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_disconnect_call.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_flip_camera.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_mic_off.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_missed_call.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/font/poppins.xml" value="0.12407407407407407" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/font/poppins_bold.xml" value="0.12407407407407407" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/font/poppins_light.xml" value="0.12407407407407407" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/font/poppins_medium.xml" value="0.12407407407407407" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/font/poppins_semibold.xml" value="0.12407407407407407" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/activity_home.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/fragment_call_detail.xml" value="0.18034447821681865" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/fragment_call_history.xml" value="0.14876723777684914" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/fragment_consult_doctor.xml" value="0.23300090661831369" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/fragment_incoming_call.xml" value="0.18034447821681865" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/fragment_my_wallet.xml" value="0.18034447821681865" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/fragment_prescription.xml" value="0.14876723777684914" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
       </map>
     </option>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="normal_side_nav">#BB86FC</color>
+    <color name="selected_side_nav">#6B00F6</color>
+    <color name="base">#6B00F6</color>
+    <color name="dark_base">#3D01BB</color>
+    <color name="light_base">#03DAC5</color>
+    <color name="light_card">#add8e6</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#3DDC84</color>
+    <color name="red">#FF0000</color>
+    <color name="green_dark">#228B22</color>
+    <color name="view_line">#C4C4C459</color>
+    <color name="status_online">#05AD34</color>
+    <color name="status_offline">#F82B2B</color>
+    <color name="status_under_verification">#EFB701</color>
+    <color name="transaction_red">#FE2D46</color>
+    <color name="transaction_green">#06C03A</color>
+    <color name="health">#F60067</color>
+    <color name="light_grey">#EDEDED</color>
+
+    <!--purple theme-->
+    <color name="purple">#6B00F6</color>
+    <color name="dark_purple">#3D01BB</color>
+    <color name="light_purple">#03DAC5</color>
+    <color name="light_card_purple">#add8e6</color>
+
+    <!--orange theme-->
+    <color name="orange">#ff914c</color>
+    <color name="dark_orange">#d0611c</color>
+    <color name="light_orange">#fda76b</color>
+    <color name="light_card_orange">#f7eac0</color>
+
+    <!--green theme-->
+    <color name="green_theme">#5cdb95</color>
+    <color name="dark_green">#379683</color>
+    <color name="light_green">#8ee4af</color>
+    <color name="light_card_green">#edf5e1</color>
+</resources>
