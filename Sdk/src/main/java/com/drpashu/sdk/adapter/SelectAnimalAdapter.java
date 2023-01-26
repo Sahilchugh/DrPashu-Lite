@@ -41,7 +41,7 @@ public class SelectAnimalAdapter extends RecyclerView.Adapter<SelectAnimalAdapte
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         holder.animalClassText.setText(animalResponseList.get(position).getAnimalClass()+"");
-        SelectAnimalDetailAdapter selectAnimalDetailAdapter = new SelectAnimalDetailAdapter(context, activity, position, animalResponseList.get(position).getData(), (SelectAnimalInterface) this);
+        SelectAnimalDetailAdapter selectAnimalDetailAdapter = new SelectAnimalDetailAdapter(context, activity, position, animalResponseList.get(position).getData(), this);
         holder.animalDetailRecyclerview.setAdapter(selectAnimalDetailAdapter);
     }
 

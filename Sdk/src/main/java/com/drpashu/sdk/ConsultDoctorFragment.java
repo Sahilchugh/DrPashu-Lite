@@ -1,8 +1,8 @@
 package com.drpashu.sdk;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-//import static com.drpashu.sdk.adapter.SelectAnimalDetailAdapter.breedName;
-//import static com.drpashu.sdk.adapter.SelectAnimalDetailAdapter.breedNameByLanguage;
+import static com.drpashu.sdk.adapter.SelectAnimalDetailAdapter.breedName;
+import static com.drpashu.sdk.adapter.SelectAnimalDetailAdapter.breedNameByLanguage;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -13,14 +13,12 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,26 +29,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-//import com.drpashu.sdk.adapter.SelectAnimalAdapter;
-//import com.drpashu.sdk.adapter.VetListAdapter;
+import com.drpashu.sdk.adapter.SelectAnimalAdapter;
+import com.drpashu.sdk.adapter.VetListAdapter;
 import com.drpashu.sdk.databinding.FragmentConsultDoctorBinding;
-//import com.drpashu.sdk.dialog.CallConnectFailedDialog;
-//import com.drpashu.sdk.dialog.FreeCallActionInterface;
-//import com.drpashu.sdk.dialog.FreeCallDialog;
-//import com.drpashu.sdk.dialog.PaymentFailedDialog;
-import com.drpashu.sdk.BaseFragment;
+import com.drpashu.sdk.dialog.CallConnectFailedDialog;
+import com.drpashu.sdk.dialog.FreeCallActionInterface;
+import com.drpashu.sdk.dialog.FreeCallDialog;
+import com.drpashu.sdk.dialog.PaymentFailedDialog;
 import com.drpashu.sdk.network.NetworkingInterface;
 import com.drpashu.sdk.network.model.response.AnimalListResponse;
 import com.drpashu.sdk.network.model.response.RazorpayOrderIdResponse;
 import com.drpashu.sdk.network.model.response.StartCallResponse;
 import com.drpashu.sdk.network.model.response.VetListResponse;
-//import com.getkeepsafe.taptargetview.TapTarget;
-//import com.getkeepsafe.taptargetview.TapTargetView;
 import com.razorpay.Checkout;
 
 import org.json.JSONObject;
@@ -63,7 +57,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class ConsultDoctorFragment extends BaseFragment implements NetworkingInterface{  //, FreeCallActionInterface
+public class ConsultDoctorFragment extends BaseFragment implements NetworkingInterface, FreeCallActionInterface {
     private Boolean doneAnalysis = false, companySelected = false, freeCall = false;
     private FragmentConsultDoctorBinding binding;
     private String farmId = "", animalType = "", animalTypeByLanguage= "", farmName="", vetCategory = "", companyName = "", groupId = "", paymentId = "";
@@ -130,11 +124,10 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
         return binding.getRoot();
     }
 
-/*
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        activity.updateTooblar(ContextCompat.getDrawable(getActivity(), R.drawable.ic_consult_doctor), true);
+//        activity.updateTooblar(ContextCompat.getDrawable(getActivity(), R.drawable.ic_consult_doctor), true);
 
         Checkout.preload(activity.getApplicationContext());
         progressDialog = new ProgressDialog(getContext());
@@ -144,26 +137,17 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
 
         checkout = new Checkout();
         checkout.setKeyID(getString(R.string.razorpay_key_id));
-        //        checkout.setImage(R.mipmap.ic_launcher);
 
-        if (doneAnalysis) {
-            activity.updateFirebaseEvents("navigation", "consult_doctor_health");
-            setFarmName();
-            networking.getVetList(farmId, farmName, animalType);
-        }
-        else {
-            networking.getAnimals();
-            activity.updateFirebaseEvents("navigation", "consult_doctor_menu");
-        }
+        networking.getAnimals();
 
         binding.proceedBtn.setOnClickListener(v -> {
-            if (breedName.length() == 0)
+/*            if (breedName.length() == 0)
                 Toast.makeText(getContext(), getContext().getResources().getString(R.string.error_select_animal), Toast.LENGTH_SHORT).show();
             else {
                 animalType = breedName;
                 animalTypeByLanguage = breedNameByLanguage;
                 networking.getVetList(farmId, farmName, breedName);
-            }
+            }*/
         });
 
         binding.companyView.setOnClickListener(v -> {
@@ -237,7 +221,7 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
         });
 
         binding.selectionBtn.setOnClickListener(v -> {
-            activity.updateFirebaseEvents("button_click", "start_call_button");
+//            activity.updateFirebaseEvents("button_click", "start_call_button");
             if (vetCategory.length() == 0)
                 Toast.makeText(getContext(), getContext().getResources().getString(R.string.please_select_vet_type), Toast.LENGTH_SHORT).show();
             else {
@@ -373,104 +357,6 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
         localBroadcastManager.unregisterReceiver(paymentResultBroadcastReceiver);
     }
 
-    private void showSelectAnimalTutorial() {
-        Rect rect = new Rect(20,130,450, 825);
-//        TapTargetView.showFor( getActivity(), TapTarget.forBounds(rect,
-
-        SpannableString spannableString = new SpannableString(this.getResources().getString(R.string.onboarding_consultation_title_3));
-        spannableString.setSpan(new UnderlineSpan(), 0, spannableString.length(), 0);
-
-        TapTargetView.showFor(activity, TapTarget.forBounds(rect,
-                spannableString,
-                activity.getResources().getString(R.string.onboarding_consultation_description_3))
-                        // All options below are optional
-                        .outerCircleColor(R.color.light_base)      // Specify a color for the outer circle
-                        .outerCircleAlpha(0.96f)            // Specify the alpha amount for the outer circle
-                        .targetCircleColor(R.color.white)   // Specify a color for the target circle
-                        .titleTextSize(24)                  // Specify the size (in sp) of the title text
-                        .titleTextColor(R.color.black)      // Specify the color of the title text
-                        .titleTypeface(ResourcesCompat.getFont(activity, R.font.poppins_semibold))  // Specify a typeface for the text
-                        .descriptionTextSize(18)            // Specify the size (in sp) of the description text
-                        .descriptionTextColor(R.color.black)  // Specify the color of the description text
-                        .descriptionTypeface(ResourcesCompat.getFont(activity, R.font.poppins_medium))  // Specify a typeface for the text
-                        .dimColor(R.color.black)            // If set, will dim behind the view with 30% opacity of the given color
-                        .drawShadow(true)                   // Whether to draw a drop shadow or not
-                        .cancelable(false)                  // Whether tapping outside the outer circle dismisses the view
-                        .tintTarget(true)                   // Whether to tint the target view's color
-                        .transparentTarget(true)           // Specify whether the target is transparent (displays the content underneath)
-//                        .icon(ContextCompat.getDrawable(this), R.drawable.home))                     // Specify a custom drawable to draw as the target
-                        .targetRadius(90),               // Specify the target radius (in dp)
-                new TapTargetView.Listener() {          // The listener can listen for regular clicks, long clicks or cancels
-                    @Override
-                    public void onTargetClick(TapTargetView view) {
-                        super.onTargetClick(view);      // This call is optional
-                        breedName = "Chicken";
-                        showProceedAnimalTutorial();
-                    }
-                });
-    }
-
-    private void showProceedAnimalTutorial() {
-        TapTargetView.showFor(activity, TapTarget.forView(binding.proceedBtn,
-                activity.getResources().getString(R.string.onboarding_consultation_title_4),
-                activity.getResources().getString(R.string.onboarding_consultation_description_4))
-                        // All options below are optional
-                        .outerCircleColor(R.color.light_base)      // Specify a color for the outer circle
-                        .outerCircleAlpha(0.96f)            // Specify the alpha amount for the outer circle
-                        .targetCircleColor(R.color.white)   // Specify a color for the target circle
-                        .titleTextSize(20)                  // Specify the size (in sp) of the title text
-                        .titleTextColor(R.color.black)      // Specify the color of the title text
-                        .titleTypeface(ResourcesCompat.getFont(activity, R.font.poppins_semibold))  // Specify a typeface for the text
-                        .descriptionTextSize(16)            // Specify the size (in sp) of the description text
-                        .descriptionTextColor(R.color.black)  // Specify the color of the description text
-                        .descriptionTypeface(ResourcesCompat.getFont(activity, R.font.poppins_medium))  // Specify a typeface for the text
-                        .dimColor(R.color.black)            // If set, will dim behind the view with 30% opacity of the given color
-                        .drawShadow(true)                   // Whether to draw a drop shadow or not
-                        .cancelable(false)                  // Whether tapping outside the outer circle dismisses the view
-                        .tintTarget(true)                   // Whether to tint the target view's color
-                        .transparentTarget(true)           // Specify whether the target is transparent (displays the content underneath)
-//                        .icon(ContextCompat.getDrawable(this), R.drawable.home))                     // Specify a custom drawable to draw as the target
-                        .targetRadius(82),               // Specify the target radius (in dp)
-                new TapTargetView.Listener() {          // The listener can listen for regular clicks, long clicks or cancels
-                    @Override
-                    public void onTargetClick(TapTargetView view) {
-                        super.onTargetClick(view);      // This call is optional
-                        binding.proceedBtn.performClick();
-                    }
-                });
-
-    }
-
-    private void showDoctorSelectionTutorial() {
-        TapTargetView.showFor(activity, TapTarget.forView(binding.selectionBtn,
-                activity.getResources().getString(R.string.onboarding_consultation_title_5),
-                activity.getResources().getString(R.string.onboarding_consultation_description_5))
-                        // All options below are optional
-                        .outerCircleColor(R.color.light_base)      // Specify a color for the outer circle
-                        .outerCircleAlpha(0.96f)            // Specify the alpha amount for the outer circle
-                        .targetCircleColor(R.color.white)   // Specify a color for the target circle
-                        .titleTextSize(20)                  // Specify the size (in sp) of the title text
-                        .titleTextColor(R.color.black)      // Specify the color of the title text
-                        .titleTypeface(ResourcesCompat.getFont(activity, R.font.poppins_semibold))  // Specify a typeface for the text
-                        .descriptionTextSize(16)            // Specify the size (in sp) of the description text
-                        .descriptionTextColor(R.color.black)  // Specify the color of the description text
-                        .descriptionTypeface(ResourcesCompat.getFont(activity, R.font.poppins_medium))  // Specify a typeface for the text
-                        .dimColor(R.color.black)            // If set, will dim behind the view with 30% opacity of the given color
-                        .drawShadow(true)                   // Whether to draw a drop shadow or not
-                        .cancelable(false)                  // Whether tapping outside the outer circle dismisses the view
-                        .tintTarget(true)                   // Whether to tint the target view's color
-                        .transparentTarget(true)           // Specify whether the target is transparent (displays the content underneath)
-//                        .icon(ContextCompat.getDrawable(this), R.drawable.home))                     // Specify a custom drawable to draw as the target
-                        .targetRadius(80),               // Specify the target radius (in dp)
-                new TapTargetView.Listener() {          // The listener can listen for regular clicks, long clicks or cancels
-                    @Override
-                    public void onTargetClick(TapTargetView view) {
-                        super.onTargetClick(view);      // This call is optional
-                        Navigation.findNavController(view1).navigate(R.id.action_nav_consult_doctor_to_onboardingCompletedFragment);
-                    }
-                });
-    }
-
     @Override
     public <T> void networkingRequest(@Nullable MethodType methodType, boolean status, @Nullable T error, Object o) {
         if (methodType == MethodType.getAnimalList && status) {
@@ -484,9 +370,6 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
             SelectAnimalAdapter selectAnimalAdapter = new SelectAnimalAdapter(getContext(), getActivity(), animalResponseList);
             binding.recyclerviewAnimals.setLayoutManager(new LinearLayoutManager(getContext()));
             binding.recyclerviewAnimals.setAdapter(selectAnimalAdapter);
-
-            if (!preferenceUtils.showConsultationOnboarding())
-                showSelectAnimalTutorial();
         } else if (methodType == MethodType.getVetList && status) {
             binding.selectAnimalLayout.setVisibility(View.GONE);
             binding.mainLayout.setVisibility(View.VISIBLE);
@@ -579,12 +462,6 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
             binding.familyPriceText.setText(vetListResponse.getCategoriesList().getFamilyOfferPrice() + " Coins");
             binding.familyMrpText.setText(String.valueOf(vetListResponse.getCategoriesList().getFamilyMrp()));
             binding.familyMrpText.setPaintFlags(binding.familyMrpText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-
-            if (!preferenceUtils.showConsultationOnboarding())
-                showDoctorSelectionTutorial();
-
-            activity.updateFirebaseEvents("fetch_list", "get_doctor_list");
-
         } else if (methodType == MethodType.getVetList && !status)
             Toast.makeText(getContext(), getContext().getResources().getString(R.string.error_vet_list), Toast.LENGTH_SHORT).show();
         else if (methodType == MethodType.startCall && status) {
@@ -664,5 +541,4 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
             utils.updateErrorEvent("Payment Step 1", "Create Order Id: " + addMoneyAmount);
         }
     }
-*/
 }

@@ -37,11 +37,7 @@ public class SelectAnimalDetailAdapter extends RecyclerView.Adapter<SelectAnimal
         this.animalResponseDetailList = animalResponseDetailList;
         this.selectAnimalInterface = selectAnimalInterface;
         this.preferenceUtils = new PreferenceUtils(context);
-        if (!preferenceUtils.showConsultationOnboarding()) {
-            if (preferenceUtils.getUserRole() == 0 || preferenceUtils.getUserRole() == 1)
-                checkedPosition = 0;
-        } else
-            checkedPosition = -1;
+        checkedPosition = -1;
     }
 
     @NonNull
@@ -54,10 +50,9 @@ public class SelectAnimalDetailAdapter extends RecyclerView.Adapter<SelectAnimal
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        holder.bind(animalResponseDetailList.get(position));
+        holder.bind();
 
         holder.item_text.setText(animalResponseDetailList.get(position).getType());
-//        Picasso.get().load(ApiClient.BASE_URL_MEDIA+ animalResponseDetailList.get(position).getAvatar()).into(holder.item_image);
         holder.item_image.setImageResource(animalResponseDetailList.get(position).getLocalImage());
     }
 
@@ -79,7 +74,7 @@ public class SelectAnimalDetailAdapter extends RecyclerView.Adapter<SelectAnimal
             item_layout = itemView.findViewById(R.id.item_layout);
         }
 
-        void bind(final AnimalListResponse.Data animalDetailList) {
+        void bind() {
             if (checkedPosition == -1) {
                 item_layout.setSelected(false);
                 item_text.setSelected(false);
