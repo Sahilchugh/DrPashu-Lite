@@ -5,7 +5,7 @@
     <application>
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/Theme.MlBrains.NoActionBar"
+            android:theme="@style/Theme.MlBrains"
             android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
