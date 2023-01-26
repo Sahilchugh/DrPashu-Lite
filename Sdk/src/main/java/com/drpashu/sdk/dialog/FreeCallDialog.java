@@ -6,10 +6,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
-import com.drpashu.app.R;
-import com.drpashu.app.activity.HomeActivity;
-import com.drpashu.app.databinding.DialogFreeCallBinding;
-import com.drpashu.app.utils.Utils;
+import com.drpashu.sdk.R;
+import com.drpashu.sdk.HomeActivity;
+import com.drpashu.sdk.databinding.DialogFreeCallBinding;
+import com.drpashu.sdk.utils.Utils;
 
 public class FreeCallDialog extends Dialog {
     private FreeCallActionInterface freeCallActionInterface;
@@ -64,13 +64,13 @@ public class FreeCallDialog extends Dialog {
         }
 
         binding.proceedBtn.setOnClickListener(v -> {
-            activity.updateFirebaseEvents("button_click", "call_proceed_button");
+//            activity.updateFirebaseEvents("button_click", "call_proceed_button");
             dismiss();
             freeCallActionInterface.freeCallDialogAction(method, paymentGatewayAmount);
         });
 
         binding.cancelBtn.setOnClickListener(v -> {
-            activity.updateFirebaseEvents("button_click", "call_cancel_dialog");
+//            activity.updateFirebaseEvents("button_click", "call_cancel_dialog");
             dismiss();
         });
     }

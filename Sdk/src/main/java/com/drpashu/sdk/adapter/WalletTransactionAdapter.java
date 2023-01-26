@@ -9,9 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.drpashu.app.R;
-import com.drpashu.app.databinding.ItemWalletTransactionBinding;
-import com.drpashu.app.network.model.response.WalletTransactionResponse;
+import com.drpashu.sdk.R;
+import com.drpashu.sdk.databinding.ItemWalletTransactionBinding;
+import com.drpashu.sdk.network.model.response.WalletTransactionResponse;
 
 import java.util.List;
 

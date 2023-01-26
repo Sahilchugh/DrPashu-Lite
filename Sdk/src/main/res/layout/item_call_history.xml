@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/standard_margin"
+    android:layout_marginEnd="@dimen/standard_margin"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/small_margin"
+    android:layout_marginTop="@dimen/standard_margin"
+    android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userImg"
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:layout_marginStart="@dimen/normal_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/userText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/userImg"
+                app:layout_constraintTop_toTopOf="@+id/userImg"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintEnd_toStartOf="@id/prescriptionStatusIcon"
+                app:layout_constraintBottom_toTopOf="@id/dateText"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/large_text"
+                android:textColor="@color/dark_base"/>
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/userImg"
+                android:layout_marginTop="@dimen/extra_small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/userText"
+                android:layout_marginStart="@dimen/normal_margin"
+                app:layout_constraintEnd_toStartOf="@id/prescriptionStatusIcon"
+                android:alpha="0.5"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/extra_small_text"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toBottomOf="@id/userImg"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/prescriptionStatusIcon"
+                android:layout_width="22dp"
+                android:layout_height="30dp"
+                android:src="@drawable/prescription_icon"
+                android:layout_marginEnd="@dimen/standard_margin"
+                app:layout_constraintEnd_toStartOf="@id/callStatusIcon"
+                app:layout_constraintTop_toTopOf="@id/userImg"
+                app:layout_constraintBottom_toBottomOf="@id/userImg"/>
+
+            <ImageView
+                android:id="@+id/callStatusIcon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/call_in_miss"
+                android:layout_marginEnd="@dimen/standard_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/userImg"
+                app:layout_constraintBottom_toBottomOf="@id/userImg"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

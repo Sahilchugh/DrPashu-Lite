@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
-import com.drpashu.app.activity.HomeActivity;
-import com.drpashu.app.databinding.DialogCallConnectFailedBinding;
+import com.drpashu.sdk.HomeActivity;
+import com.drpashu.sdk.databinding.DialogCallConnectFailedBinding;
 
 public class CallConnectFailedDialog extends Dialog {
     private DialogCallConnectFailedBinding binding;

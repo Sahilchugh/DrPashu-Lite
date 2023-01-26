@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.drpashu.app.R;
-import com.drpashu.app.network.model.response.AnimalListResponse;
+import com.drpashu.sdk.R;
+import com.drpashu.sdk.network.model.response.AnimalListResponse;
 
 import java.util.List;
 

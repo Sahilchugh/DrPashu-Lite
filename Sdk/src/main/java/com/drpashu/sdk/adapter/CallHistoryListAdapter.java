@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.drpashu.app.R;
-import com.drpashu.app.databinding.ItemCallHistoryBinding;
-import com.drpashu.app.network.ApiClient;
-import com.drpashu.app.network.model.response.CallHistoryListResponse;
+import com.drpashu.sdk.R;
+import com.drpashu.sdk.databinding.ItemCallHistoryBinding;
+import com.drpashu.sdk.network.ApiClient;
+import com.drpashu.sdk.network.model.response.CallHistoryListResponse;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -12,9 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.drpashu.app.R;
-import com.drpashu.app.network.model.response.AnimalListResponse;
-import com.drpashu.app.utils.PreferenceUtils;
+import com.drpashu.sdk.R;
+import com.drpashu.sdk.network.model.response.AnimalListResponse;
+import com.drpashu.sdk.utils.PreferenceUtils;
 
 import java.util.List;
 
