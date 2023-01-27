@@ -103,11 +103,6 @@ public class Networking {
     }
 
     public void getVetList(String lotId, String farmName, String breedName) {
-        progressdialog = new ProgressDialog(context);
-        progressdialog.setMessage(context.getString(R.string.loading));
-        progressdialog.setCancelable(false);
-        progressdialog.show();
-
         Call<VetListResponse> vetListResponseCall;
         if (farmName.length() == 0)
             vetListResponseCall = apiInterface.getVetList(preferenceUtils.getUserId(), null, breedName);
@@ -117,21 +112,24 @@ public class Networking {
         vetListResponseCall.enqueue(new Callback<VetListResponse>() {
             @Override
             public void onResponse(@NonNull Call<VetListResponse> call, @NonNull Response<VetListResponse> response) {
-                progressdialog.dismiss();
-
                 if (response.isSuccessful()) {
                     VetListResponse vetListResponse = response.body();
+
                     if (vetListResponse.getStatus())
                         networkingInterface.networkingRequest(NetworkingInterface.MethodType.getVetList, true, null, vetListResponse.getData());
-                    else
-                        Toast.makeText(context, vetListResponse.getMessage()+"", Toast.LENGTH_SHORT).show();
-                } else
+                    else {
+                        Toast.makeText(context, vetListResponse.getMessage() + "", Toast.LENGTH_SHORT).show();
+                        networkingInterface.networkingRequest(NetworkingInterface.MethodType.getVetList, false, null, null);
+                    }
+                } else {
+                    Toast.makeText(context, context.getResources().getString(R.string.error_vet_list), Toast.LENGTH_SHORT).show();
                     networkingInterface.networkingRequest(NetworkingInterface.MethodType.getVetList, false, null, null);
+                }
             }
 
             @Override
             public void onFailure(@NonNull Call<VetListResponse> call, @NonNull Throwable t) {
-                progressdialog.dismiss();
+                Toast.makeText(context, context.getResources().getString(R.string.error_vet_list), Toast.LENGTH_SHORT).show();
                 networkingInterface.networkingRequest(NetworkingInterface.MethodType.getVetList, false, null, null);
             }
         });

@@ -90,7 +90,7 @@ public class PreferenceUtils {
     }
 
     public String getUserId() {
-        return getPrefrence().getString("user-id", "");
+        return getPrefrence().getString("user-id", "FmMH4HN9UYMsHjTSBdlxLxgyFsj2");
     }
 
     public void setUserId(String token) {

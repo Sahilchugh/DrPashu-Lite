@@ -141,13 +141,14 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
         networking.getAnimals();
 
         binding.proceedBtn.setOnClickListener(v -> {
-/*            if (breedName.length() == 0)
+            if (breedName.length() == 0)
                 Toast.makeText(getContext(), getContext().getResources().getString(R.string.error_select_animal), Toast.LENGTH_SHORT).show();
             else {
                 animalType = breedName;
                 animalTypeByLanguage = breedNameByLanguage;
+                showLoading();
                 networking.getVetList(farmId, farmName, breedName);
-            }*/
+            }
         });
 
         binding.companyView.setOnClickListener(v -> {
@@ -371,6 +372,8 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
             binding.recyclerviewAnimals.setLayoutManager(new LinearLayoutManager(getContext()));
             binding.recyclerviewAnimals.setAdapter(selectAnimalAdapter);
         } else if (methodType == MethodType.getVetList && status) {
+            dismissLoading();
+
             binding.selectAnimalLayout.setVisibility(View.GONE);
             binding.mainLayout.setVisibility(View.VISIBLE);
             binding.selectionBtn.setVisibility(View.VISIBLE);
@@ -462,8 +465,7 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
             binding.familyPriceText.setText(vetListResponse.getCategoriesList().getFamilyOfferPrice() + " Coins");
             binding.familyMrpText.setText(String.valueOf(vetListResponse.getCategoriesList().getFamilyMrp()));
             binding.familyMrpText.setPaintFlags(binding.familyMrpText.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        } else if (methodType == MethodType.getVetList && !status)
-            Toast.makeText(getContext(), getContext().getResources().getString(R.string.error_vet_list), Toast.LENGTH_SHORT).show();
+        }
         else if (methodType == MethodType.startCall && status) {
             progressDialog.dismiss();
             StartCallResponse.Data startCallDataResponse = (StartCallResponse.Data) o;
@@ -524,8 +526,11 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
                     showCallNotConnectedDialog((String) o);
             }
             utils.updateErrorEvent("Start Call Error Event", "Call Id - " + groupId + " Error Message - " + (String) o);
-        } else if (methodType == MethodType.getRazorpayOrderId || methodType == MethodType.fetchBalance || methodType == MethodType.dashboardInfo && !status)
+        } else if (methodType == MethodType.getRazorpayOrderId || methodType == MethodType.fetchBalance
+                || methodType == MethodType.getVetList || methodType == MethodType.dashboardInfo && !status) {
+            dismissLoading();
             progressDialog.dismiss();
+        }
     }
 
     @Override
