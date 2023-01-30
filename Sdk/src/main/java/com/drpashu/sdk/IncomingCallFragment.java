@@ -20,17 +20,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.drpashu.sdk.databinding.FragmentIncomingCallBinding;
-//import com.drpashu.app.dialog.CallConnectFailedDialog;
-//import com.drpashu.app.fragments.BaseFragment;
-//import com.drpashu.app.network.ApiClient;
-//import com.drpashu.app.network.model.response.StartCallResponse;
+import com.drpashu.sdk.dialog.CallConnectFailedDialog;
+import com.drpashu.sdk.network.ApiClient;
+import com.drpashu.sdk.network.model.response.StartCallResponse;
 import com.squareup.picasso.Picasso;
 
 import io.agora.rtc.Constants;
@@ -131,20 +129,16 @@ public class IncomingCallFragment extends BaseFragment {
         binding = FragmentIncomingCallBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-/*
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        activity.updateTooblar(ContextCompat.getDrawable(activity, R.drawable.ic_consult_doctor), false);
-        activity.updateFirebaseEvents("navigation", "calling_screen");
 
         mediaPlayer = MediaPlayer.create(context, R.raw.calling_sound);
 
         preferenceUtils.setBlockNavigationStatus(true);
         view1 = view;
         Glide.with(context).load(R.raw.phone_ringing).into(new DrawableImageViewTarget(binding.animationView));
-//        Glide.with(context).load(R.raw.call_accept).into(new DrawableImageViewTarget(binding.callAcceptImg));
 
         binding.videoBtn.setEnabled(false);
 
@@ -166,16 +160,12 @@ public class IncomingCallFragment extends BaseFragment {
         } else {
             binding.animationLayout.setVisibility(View.VISIBLE);
             mediaPlayer.start();
-
-            if (preferenceUtils.getUserRole() == 2)
-                binding.statusText.setText(utils.getStringValue(R.string.animal_owner_will_be_there));
-            else
-                binding.statusText.setText(utils.getStringValue(R.string.vet_will_be_there));
+            binding.statusText.setText(utils.getStringValue(R.string.vet_will_be_there));
 
             initializeCall();
         }
 
-        binding.endCallBtn.setOnClickListener(v -> endCall(v));
+        binding.endCallBtn.setOnClickListener(v -> endCall());
         binding.videoBtn.setOnClickListener(v -> onVideoMuteClicked());
         binding.audioBtn.setOnClickListener(v -> onAudioMuteClicked());
         binding.flipCameraBtn.setOnClickListener(v -> mRtcEngine.switchCamera());
@@ -187,7 +177,6 @@ public class IncomingCallFragment extends BaseFragment {
             countDownTimer.cancel();
 
             if (checkCallTime()) {
-                activity.updateFirebaseEvents("button_click", "doctor_accept_call");
                 initializeCall();
             } else {
                 utils.shortToast(utils.getStringValue(R.string.call_already_completed));
@@ -202,7 +191,6 @@ public class IncomingCallFragment extends BaseFragment {
             countDownTimer.cancel();
 
             if (checkCallTime()) {
-                activity.updateFirebaseEvents("button_click", "doctor_reject_call");
                 showLoading();
                 networking.rejectCall(callId, notificationId + "", callInitiated);
             } else {
@@ -231,12 +219,12 @@ public class IncomingCallFragment extends BaseFragment {
         initAgoraEngine();
     }
 
-    private void endCall(View view) {
+    private void endCall() {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setMessage(utils.getStringValue(R.string.end_call_message))
                 .setPositiveButton(utils.getStringValue(R.string.end_call), (dialog, which) -> {
                     if(callStarted) {
-                        finishCall(view);
+                        finishCall();
                     } else {
                         showLoading();
 
@@ -279,7 +267,7 @@ public class IncomingCallFragment extends BaseFragment {
         public void onUserOffline(int uid, int reason) {
             requireActivity().runOnUiThread(() -> {
                 binding.incomingVideoLayout.removeAllViews();
-                finishCall(view1);
+                finishCall();
             });
         }
 
@@ -414,7 +402,7 @@ public class IncomingCallFragment extends BaseFragment {
         localBroadcastManager.unregisterReceiver(notificationForFarmerCallDecline);
     }
 
-    private void finishCall(View view) {
+    private void finishCall() {
         preferenceUtils.setBlockNavigationStatus(false);
         binding.incomingVideoLayout.removeAllViews();
         binding.selfVideoLayout.removeAllViews();
@@ -422,23 +410,15 @@ public class IncomingCallFragment extends BaseFragment {
         if (callStarted) {
             utils.shortToast(utils.getStringValue(R.string.call_completed));
             networking.updateCallStatus(callId, "Ended");
-            if (preferenceUtils.getUserRole() == 2) {
-                Bundle bundle = new Bundle();
-                bundle.putString("callId", callId);
-                Navigation.findNavController(view).navigate(R.id.action_incomingCallFragment_to_prescriptionFragment, bundle);
-            } else
-                activity.onBackPressed();
-        } else
-            activity.onBackPressed();
+        }
+
+        activity.onBackPressed();
     }
 
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (preferenceUtils.getUserRole() == 2)
-            networking.updateVetStatus("Online");
-
         if (countDownTimer != null)
             countDownTimer.cancel();
 
@@ -490,8 +470,7 @@ public class IncomingCallFragment extends BaseFragment {
 
             utils.updateErrorEvent("Start Call Error Event", "Call Id - " + groupId + " Error Message - " + (String) o);
 
-            finishCall(view1);
+            finishCall();
         }
     }
-*/
 }
