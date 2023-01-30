@@ -24,10 +24,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.drpashu.sdk.R;
-//import com.drpashu.sdk.adapter.WalletTransactionAdapter;
+import com.drpashu.sdk.adapter.WalletTransactionAdapter;
 import com.drpashu.sdk.databinding.FragmentMyWalletBinding;
-//import com.drpashu.sdk.dialog.PaymentFailedDialog;
-//import com.drpashu.sdk.fragments.BaseFragment;
+import com.drpashu.sdk.dialog.PaymentFailedDialog;
 import com.drpashu.sdk.network.NetworkingInterface;
 import com.drpashu.sdk.network.model.response.RazorpayOrderIdResponse;
 import com.drpashu.sdk.network.model.response.WalletTransactionResponse;
@@ -42,7 +41,6 @@ public class MyWalletFragment extends BaseFragment {
     private Checkout checkout;
     private LocalBroadcastManager localBroadcastManager;
     private String paymentId = "";
-    private Boolean adminUserSearch = false;
 
     @Override
     public void onAttach(Context context) {
@@ -58,13 +56,6 @@ public class MyWalletFragment extends BaseFragment {
     public void onDetach() {
         super.onDetach();
         localBroadcastManager.unregisterReceiver(paymentResultBroadcastReceiver);
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null)
-            adminUserSearch = getArguments().getBoolean("adminUserSearch");
     }
 
     private final BroadcastReceiver paymentResultBroadcastReceiver = new BroadcastReceiver() {
@@ -84,7 +75,7 @@ public class MyWalletFragment extends BaseFragment {
                     errorMessage = errorMessage.replace(",", " ");
                     utils.updateErrorEvent("Add Money Payment Failed Event", "Amount- "+ binding.coinInput.getText().toString() + "  " + errorMessage);
 
-//                    showPaymentFailure();
+                    showPaymentFailure();
                 }
             }
         }
@@ -95,20 +86,17 @@ public class MyWalletFragment extends BaseFragment {
         binding = FragmentMyWalletBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-/*
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        activity.updateTooblar(ContextCompat.getDrawable(activity, R.drawable.ic_wallet_icon), true);
-        activity.updateFirebaseEvents("navigation", "my_wallet_menu");
 
         Checkout.preload(activity.getApplicationContext());
         checkout = new Checkout();
         checkout.setKeyID(getString(R.string.razorpay_key_id));
 
         showLoading();
-        networking.fetchBalance(adminUserSearch);
+        networking.fetchBalance();
 
         binding.coinInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -187,7 +175,7 @@ public class MyWalletFragment extends BaseFragment {
                 utils.hideView(binding.noteText);
             }
 
-            networking.fetchWalletTransaction(adminUserSearch);
+            networking.fetchWalletTransaction();
         } else if (methodType == MethodType.fetchWalletTransaction && status){
             dismissLoading();
             List<WalletTransactionResponse.Data> walletTransactionList = (List<WalletTransactionResponse.Data>) object;
@@ -205,7 +193,7 @@ public class MyWalletFragment extends BaseFragment {
             utils.shortToast(utils.getStringValue(R.string.coins_added_success));
             binding.coinInput.setText("");
 
-            networking.fetchBalance(adminUserSearch);
+            networking.fetchBalance();
         } else if (methodType == MethodType.getRazorpayOrderId && status){
             dismissLoading();
 
@@ -221,5 +209,4 @@ public class MyWalletFragment extends BaseFragment {
                 || methodType == MethodType.getRazorpayOrderId  && !status)
             dismissLoading();
     }
-*/
 }

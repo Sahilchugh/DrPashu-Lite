@@ -20,14 +20,12 @@ import java.util.List;
 public class CallHistoryListAdapter extends RecyclerView.Adapter<CallHistoryListAdapter.ViewHolder> {
     private Context context;
     private Activity activity;
-    private int userRole = 0;
     private CallHistoryInterface callHistoryInterface;
     private List<CallHistoryListResponse.Data> callHistoryResponseList;
 
-    public CallHistoryListAdapter(Context context, Activity activity, int userRole, CallHistoryInterface callHistoryInterface, List<CallHistoryListResponse.Data> callHistoryResponseList) {
+    public CallHistoryListAdapter(Context context, Activity activity, CallHistoryInterface callHistoryInterface, List<CallHistoryListResponse.Data> callHistoryResponseList) {
         this.context = context;
         this.activity = activity;
-        this.userRole = userRole;
         this.callHistoryInterface = callHistoryInterface;
         this.callHistoryResponseList = callHistoryResponseList;
     }
@@ -48,47 +46,18 @@ public class CallHistoryListAdapter extends RecyclerView.Adapter<CallHistoryList
                 Picasso.get().load(ApiClient.BASE_URL_MEDIA+callHistoryResponseList.get(position).getProfilePicture()).into(holder.binding.userImg);
         }
 
-        if (userRole==0 || userRole==1){
-            if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_done);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
-        } else if (userRole == 2){
-            if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_done);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
-        }
-        else {
-            if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_miss);
-            else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
-                holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_done);
-        }
+        if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
+            holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_miss);
+        else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Farmer") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
+            holder.binding.callStatusIcon.setImageResource(R.drawable.call_out_done);
+        else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
+            holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
+        else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Vet") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
+            holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
+        else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Missed"))
+            holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_miss);
+        else if (callHistoryResponseList.get(position).getCallInitiated().equalsIgnoreCase("Admin") && callHistoryResponseList.get(position).getCallStatusRes().equalsIgnoreCase("Completed"))
+            holder.binding.callStatusIcon.setImageResource(R.drawable.call_in_done);
 
         holder.itemView.setOnClickListener(v -> callHistoryInterface.selectedCall(callHistoryResponseList.get(position).getId()));
 

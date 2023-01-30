@@ -21,6 +21,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Theme.MlBrains.Data">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="windowActionBar">true</item>
+    </style>
+
     <style name="Theme.MlBrains.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MlBrains.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

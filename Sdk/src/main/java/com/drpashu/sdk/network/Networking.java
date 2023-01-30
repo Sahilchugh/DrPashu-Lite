@@ -272,8 +272,8 @@ public class Networking {
         });
     }
 
-    public void getCallHistoryList(Boolean adminUserSearch) {
-        Call<CallHistoryListResponse> callHistoryListResponseCall = apiInterface.getCallHistoryList(getUserId(adminUserSearch));
+    public void getCallHistoryList() {
+        Call<CallHistoryListResponse> callHistoryListResponseCall = apiInterface.getCallHistoryList(preferenceUtils.getUserId());
         callHistoryListResponseCall.enqueue(new Callback<CallHistoryListResponse>() {
             @Override
             public void onResponse(@NonNull Call<CallHistoryListResponse> call, @NonNull Response<CallHistoryListResponse> response) {
@@ -309,8 +309,8 @@ public class Networking {
             return preferenceUtils.getUserId();
     }
 
-    public void getCallDetail(String callId, Boolean adminUserSearch) {
-        Call<CallDetailResponse> callDetailResponseCall = apiInterface.getCallDetail(getUserId(adminUserSearch), callId);
+    public void getCallDetail(String callId) {
+        Call<CallDetailResponse> callDetailResponseCall = apiInterface.getCallDetail(preferenceUtils.getUserId(), callId);
         callDetailResponseCall.enqueue(new Callback<CallDetailResponse>() {
             @Override
             public void onResponse(@NonNull Call<CallDetailResponse> call, @NonNull Response<CallDetailResponse> response) {
@@ -469,14 +469,8 @@ public class Networking {
         });
     }
 
-    public byte[] getFileDataFromDrawable(Bitmap bitmap) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 80, byteArrayOutputStream);
-        return byteArrayOutputStream.toByteArray();
-    }
-
-    public void fetchBalance(Boolean adminUserSearch) {
-        Call<WalletResponse> walletResponseCall = apiInterface.fetchBalance(getUserId(adminUserSearch));
+    public void fetchBalance() {
+        Call<WalletResponse> walletResponseCall = apiInterface.fetchBalance(preferenceUtils.getUserId());
         walletResponseCall.enqueue(new Callback<WalletResponse>() {
             @Override
             public void onResponse(@NonNull Call<WalletResponse> call, @NonNull Response<WalletResponse> response) {
@@ -502,8 +496,8 @@ public class Networking {
         });
     }
 
-    public void fetchWalletTransaction(Boolean adminUserSearch) {
-        Call<WalletTransactionResponse> walletTransactionResponseCall = apiInterface.fetchWalletTransaction(getUserId(adminUserSearch));
+    public void fetchWalletTransaction() {
+        Call<WalletTransactionResponse> walletTransactionResponseCall = apiInterface.fetchWalletTransaction(preferenceUtils.getUserId());
         walletTransactionResponseCall.enqueue(new Callback<WalletTransactionResponse>() {
             @Override
             public void onResponse(@NonNull Call<WalletTransactionResponse> call, @NonNull Response<WalletTransactionResponse> response) {

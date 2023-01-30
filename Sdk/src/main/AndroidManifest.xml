@@ -14,7 +14,7 @@
     <application>
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/Theme.MlBrains"
+            android:theme="@style/Theme.MlBrains.Data"
             android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"

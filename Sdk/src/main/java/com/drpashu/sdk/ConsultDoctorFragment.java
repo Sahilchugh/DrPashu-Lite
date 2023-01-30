@@ -233,7 +233,7 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
                     }
                     else {
                         progressDialog.show();
-                        networking.fetchBalance(false);
+                        networking.fetchBalance();
                     }
                 }
             }

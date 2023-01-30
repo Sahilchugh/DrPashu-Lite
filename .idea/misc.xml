@@ -18,6 +18,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_flip_camera.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_mic_off.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_missed_call.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_symptoms_rectangle.xml" value="0.195" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_vet_chat.xml" value="0.1715" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/ic_warning.xml" value="0.1715" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/drawable/setclicked.xml" value="0.1715" />
@@ -45,6 +46,8 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/item_transactions.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/item_vet.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/item_wallet_transaction.xml" value="0.14709569577935647" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/layout_image_preview.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/layout/symptom_list.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/Sdk/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/DrPashuLite/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
       </map>
