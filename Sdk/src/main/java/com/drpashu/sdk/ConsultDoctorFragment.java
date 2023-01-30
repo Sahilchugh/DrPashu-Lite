@@ -100,7 +100,7 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
                     errorMessage = errorMessage.replace(",", " ");
                     utils.updateErrorEvent("Payment Step 6 - Consult Doctor Payment Failed Event", "Amount- "+ addMoneyAmount + " " + errorMessage);
 
-//                    showPaymentFailure();
+                    showPaymentFailure();
                 }
             }
         }

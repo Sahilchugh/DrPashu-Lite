@@ -66,7 +66,7 @@ public class Utils {
     }
 
     public void updateErrorEvent(String errorTitle, String errorDescription){
-        networking.postErrorDetails(errorTitle, errorDescription,
+        networking.postErrorDetails("SDK - " + errorTitle, errorDescription,
                 "Manufacturer: " + Build.MANUFACTURER + ", Model: " + Build.MODEL + ", Android Version: " + Build.VERSION.SDK_INT);
     }
 
