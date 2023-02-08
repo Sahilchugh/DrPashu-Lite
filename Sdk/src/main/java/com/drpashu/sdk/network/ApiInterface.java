@@ -2,6 +2,7 @@ package com.drpashu.sdk.network;
 
 import com.drpashu.sdk.network.model.request.AddFarmRequest;
 import com.drpashu.sdk.network.model.request.AddPriceRequest;
+import com.drpashu.sdk.network.model.request.DrPashuRequest;
 import com.drpashu.sdk.network.model.request.LoginRequest;
 import com.drpashu.sdk.network.model.request.SignupOptionalRequest;
 import com.drpashu.sdk.network.model.request.SignupRequest;
@@ -21,6 +22,7 @@ import com.drpashu.sdk.network.model.response.CallHistoryListResponse;
 import com.drpashu.sdk.network.model.response.DashboardResponse;
 import com.drpashu.sdk.network.model.response.DeviceTokenUpdateResponse;
 import com.drpashu.sdk.network.model.response.DiseaseListResponse;
+import com.drpashu.sdk.network.model.response.DrPashuResponse;
 import com.drpashu.sdk.network.model.response.FeedResponse;
 import com.drpashu.sdk.network.model.response.FetchPostsResponse;
 import com.drpashu.sdk.network.model.response.FinanceResponse;
@@ -147,6 +149,9 @@ public interface ApiInterface {
 
     @GET("view_balance")
     Call<WalletResponse> fetchBalance(@Header("user-id") String user_id);
+
+    @POST("sdk/add_user")
+    Call<DrPashuResponse> addUserFromSdk(@Body DrPashuRequest drPashuRequest);
 
     @GET("transaction_history")
     Call<WalletTransactionResponse> fetchWalletTransaction(@Header("user-id") String user_id);

@@ -13,7 +13,7 @@
 
     <application>
         <activity
-            android:name=".HomeActivity"
+            android:name=".activity.HomeActivity"
             android:theme="@style/Theme.MlBrains.Data"
             android:exported="false" />
         <meta-data

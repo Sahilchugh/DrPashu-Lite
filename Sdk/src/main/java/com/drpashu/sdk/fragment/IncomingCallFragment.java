@@ -1,4 +1,4 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.fragment;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -21,10 +21,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
+import com.drpashu.sdk.R;
 import com.drpashu.sdk.databinding.FragmentIncomingCallBinding;
 import com.drpashu.sdk.dialog.CallConnectFailedDialog;
 import com.drpashu.sdk.network.ApiClient;

@@ -1,4 +1,4 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.fragment;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import static com.drpashu.sdk.adapter.SelectAnimalDetailAdapter.breedName;
@@ -33,6 +33,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.drpashu.sdk.R;
 import com.drpashu.sdk.adapter.SelectAnimalAdapter;
 import com.drpashu.sdk.adapter.VetListAdapter;
 import com.drpashu.sdk.databinding.FragmentConsultDoctorBinding;
@@ -298,12 +299,6 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
             options.put("name", "DrPashu Technologies");
             options.put("description", "24/7 Vet in your Smartphone");
             options.put("order_id", orderId);//from response of step 3.
-            options.put("prefill.email", preferenceUtils.getEmail());
-            try {
-                options.put("prefill.contact",preferenceUtils.getPhoneNumber().substring(3));
-            } catch (Exception e){
-                Log.e("phone_capture", e.getMessage()+"");
-            }
             JSONObject retryObj = new JSONObject();
             retryObj.put("enabled", false);
             options.put("retry", retryObj);

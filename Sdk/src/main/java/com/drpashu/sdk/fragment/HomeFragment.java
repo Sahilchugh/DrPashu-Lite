@@ -1,4 +1,4 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.fragment;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.drpashu.sdk.R;
 import com.drpashu.sdk.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {

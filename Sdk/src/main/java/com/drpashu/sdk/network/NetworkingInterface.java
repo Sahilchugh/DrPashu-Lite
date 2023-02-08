@@ -17,6 +17,6 @@ public interface NetworkingInterface {
         updateDeviceToken, getAnimalList, fetchFeedData, updateFeedUsed, fetchProduceData,
         updateProduceAdd, callBackUser, postErrorDetails, fetchBalance, fetchWalletTransaction,
         addCoinsToWallet, updateVetSchedule, getUserList, getUserDetail, getTransactionTypeList,
-        makeTransaction, callUserById, createPost, fetchAddaPosts, fetchPostReplies, createReply, postAction, searchAddaPosts, getFarmList
+        makeTransaction, callUserById, createPost, fetchAddaPosts, fetchPostReplies, createReply, postAction, searchAddaPosts, addUserFromSdk, getFarmList
     }
 }

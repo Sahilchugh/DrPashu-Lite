@@ -1,10 +1,6 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,16 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.navigation.Navigation;
 
+import com.drpashu.sdk.R;
 import com.drpashu.sdk.databinding.FragmentCallDetailBinding;
 import com.drpashu.sdk.network.ApiClient;
 import com.drpashu.sdk.network.model.response.CallDetailResponse;
-import com.drpashu.sdk.network.model.response.StartCallResponse;
 import com.ortiz.touchview.TouchImageView;
 import com.squareup.picasso.Picasso;
 

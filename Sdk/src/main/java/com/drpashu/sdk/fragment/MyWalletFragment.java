@@ -1,4 +1,4 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.fragment;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
@@ -12,7 +12,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -136,12 +135,6 @@ public class MyWalletFragment extends BaseFragment {
             options.put("name", "DrPashu Technologies");
             options.put("description", "24/7 Vet in your Smartphone");
             options.put("order_id", orderId);//from response of step 3.
-            options.put("prefill.email", preferenceUtils.getEmail());
-            try {
-                options.put("prefill.contact",preferenceUtils.getPhoneNumber().substring(3));
-            } catch (Exception e){
-                Log.e("phone_capture", e.getMessage()+"");
-            }
             JSONObject retryObj = new JSONObject();
             retryObj.put("enabled", false);
             options.put("retry", retryObj);
@@ -168,13 +161,6 @@ public class MyWalletFragment extends BaseFragment {
             binding.coinValueText.setText(walletBalance);
 
             utils.visibleView(binding.mainLayout);
-            if (preferenceUtils.getUserRole() == 2 || preferenceUtils.getUserRole() == 3){
-                utils.hideView(binding.addCoinText);
-                utils.hideView(binding.coinInputLayout);
-                utils.hideView(binding.addCoinsBtn);
-                utils.hideView(binding.noteText);
-            }
-
             networking.fetchWalletTransaction();
         } else if (methodType == MethodType.fetchWalletTransaction && status){
             dismissLoading();

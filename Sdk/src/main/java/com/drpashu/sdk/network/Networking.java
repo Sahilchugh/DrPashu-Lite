@@ -9,11 +9,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.drpashu.sdk.R;
+import com.drpashu.sdk.network.model.request.DrPashuRequest;
 import com.drpashu.sdk.network.model.response.AnimalListResponse;
 import com.drpashu.sdk.network.model.response.BaseResponse;
 import com.drpashu.sdk.network.model.response.CallDetailResponse;
 import com.drpashu.sdk.network.model.response.CallHistoryListResponse;
 import com.drpashu.sdk.network.model.response.DeviceTokenUpdateResponse;
+import com.drpashu.sdk.network.model.response.DrPashuResponse;
 import com.drpashu.sdk.network.model.response.RazorpayOrderIdResponse;
 import com.drpashu.sdk.network.model.response.StartCallResponse;
 import com.drpashu.sdk.network.model.response.VetListResponse;
@@ -21,6 +23,9 @@ import com.drpashu.sdk.network.model.response.WalletResponse;
 import com.drpashu.sdk.network.model.response.WalletTransactionResponse;
 import com.drpashu.sdk.utils.PreferenceUtils;
 import com.google.gson.JsonObject;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -39,11 +44,13 @@ public class Networking {
     private final Context context;
     private final Activity activity;
     Retrofit retrofit = ApiClient.getRetrofitInstance();
+    Retrofit sdkRetrofit = ApiClient.getSdkRetrofitInstance();
     private static ProgressDialog progressdialog;
     NetworkingInterface networkingInterface;
     public static int lot_id = 0;
     public static String lot_name_text = "";
     ApiInterface apiInterface = retrofit.create(ApiInterface.class);
+    ApiInterface apiSdkInterface = sdkRetrofit.create(ApiInterface.class);
 
     public Networking(Context context, Activity activity, NetworkingInterface networkingInterface) {
         this.context = context;
@@ -299,16 +306,6 @@ public class Networking {
         });
     }
 
-    private String getUserId(Boolean adminUserSearch) {
-        if (preferenceUtils.getUserRole() == 3) {
-            if (adminUserSearch)
-                return preferenceUtils.getUserIdForAdmin();
-            else
-                return preferenceUtils.getUserId();
-        } else
-            return preferenceUtils.getUserId();
-    }
-
     public void getCallDetail(String callId) {
         Call<CallDetailResponse> callDetailResponseCall = apiInterface.getCallDetail(preferenceUtils.getUserId(), callId);
         callDetailResponseCall.enqueue(new Callback<CallDetailResponse>() {
@@ -364,13 +361,7 @@ public class Networking {
     }
 
     public void rejectCall(String callId, String notificationId, String callInitiated) {
-        String userRole = "";
-        if (preferenceUtils.getUserRole() == 0 || preferenceUtils.getUserRole() == 1)
-            userRole = "farmer";
-        else
-            userRole = "vet";
-
-        Call<BaseResponse> baseResponseCall = apiInterface.rejectCall(preferenceUtils.getUserId(), callId, notificationId, userRole, callInitiated);
+        Call<BaseResponse> baseResponseCall = apiInterface.rejectCall(preferenceUtils.getUserId(), callId, notificationId, "farmer", callInitiated);
         baseResponseCall.enqueue(new Callback<BaseResponse>() {
             @Override
             public void onResponse(@NonNull Call<BaseResponse> call, @NonNull Response<BaseResponse> response) {
@@ -550,6 +541,55 @@ public class Networking {
             public void onFailure(@NonNull Call<BaseResponse> call, @NonNull Throwable t) {
                 Toast.makeText(context, context.getResources().getString(R.string.error_add_coins_to_wallet), Toast.LENGTH_SHORT).show();
                 networkingInterface.networkingRequest(NetworkingInterface.MethodType.addCoinsToWallet, false, null, t.getMessage()+"");
+            }
+        });
+    }
+
+    public void addUserFromSdk(String jsonData) {
+        DrPashuRequest drPashuRequest = new DrPashuRequest();
+
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+
+            drPashuRequest.setApi_key(jsonObject.getString("api_key"));
+            drPashuRequest.setFirst_name(jsonObject.getString("first_name"));
+            drPashuRequest.setLast_name(jsonObject.getString("last_name"));
+            drPashuRequest.setPhone_number(jsonObject.getString("phone_number"));
+            drPashuRequest.setDevice_id(jsonObject.getString("device_id"));
+            drPashuRequest.setGender(jsonObject.getString("gender"));
+            drPashuRequest.setLocation(jsonObject.getString("location"));
+            drPashuRequest.setCountry(jsonObject.getString("country"));
+            drPashuRequest.setState(jsonObject.getString("state"));
+            drPashuRequest.setDistrict(jsonObject.getString("district"));
+            drPashuRequest.setPincode(jsonObject.getString("pincode"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        Call<DrPashuResponse> drPashuResponseCall = apiSdkInterface.addUserFromSdk(drPashuRequest);
+        drPashuResponseCall.enqueue(new Callback<DrPashuResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<DrPashuResponse> call, @NonNull Response<DrPashuResponse> response) {
+                if (response.isSuccessful()) {
+                    DrPashuResponse drPashuResponse = response.body();
+                    if (drPashuResponse.getStatus()) {
+                        preferenceUtils.setUserId(drPashuResponse.getData().getPhoneUserId());
+                        networkingInterface.networkingRequest(NetworkingInterface.MethodType.addUserFromSdk, true, null, null);
+                    } else {
+                        Toast.makeText(context, drPashuResponse.getMessage() + "", Toast.LENGTH_SHORT).show();
+                        networkingInterface.networkingRequest(NetworkingInterface.MethodType.addUserFromSdk, false, null, null);
+                    }
+                } else {
+                    Toast.makeText(context, context.getResources().getString(R.string.error_add_user_from_sdk), Toast.LENGTH_SHORT).show();
+                    networkingInterface.networkingRequest(NetworkingInterface.MethodType.addUserFromSdk, false, null, null);
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<DrPashuResponse> call, @NonNull Throwable t) {
+                Toast.makeText(context, context.getResources().getString(R.string.error_add_user_from_sdk), Toast.LENGTH_SHORT).show();
+                networkingInterface.networkingRequest(NetworkingInterface.MethodType.addUserFromSdk, false, null, null);
             }
         });
     }

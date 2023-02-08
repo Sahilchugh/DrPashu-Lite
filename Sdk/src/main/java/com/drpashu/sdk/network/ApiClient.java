@@ -6,13 +6,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-//    private static final String BASE_URL = "https://mlbrains.com/api/";
-    private static final String BASE_URL = "https://api.drpashu.com/api/";
+    private static final String BASE_URL = "https://mlbrains.com/api/";
+//    private static final String BASE_URL = "https://api.drpashu.com/api/";
 
-//    public static final String BASE_URL_MEDIA = "https://mlbrains.com";
-    public static final String BASE_URL_MEDIA = "https://api.drpashu.com";
+    public static final String BASE_URL_MEDIA = "https://mlbrains.com";
+//    public static final String BASE_URL_MEDIA = "https://api.drpashu.com";
 
-    private static Retrofit retrofit;
+    private static Retrofit retrofit, sdkRetrofit;
 
     public static Retrofit getRetrofitInstance(){
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
@@ -28,5 +28,21 @@ public class ApiClient {
                     .build();
         }
         return retrofit;
+    }
+
+    public static Retrofit getSdkRetrofitInstance(){
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
+
+        if (sdkRetrofit == null) {
+            sdkRetrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL_MEDIA)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(okHttpClient)
+                    .build();
+        }
+        return sdkRetrofit;
     }
 }

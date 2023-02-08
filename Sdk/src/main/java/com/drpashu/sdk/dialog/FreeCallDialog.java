@@ -7,7 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 
 import com.drpashu.sdk.R;
-import com.drpashu.sdk.HomeActivity;
+import com.drpashu.sdk.activity.HomeActivity;
 import com.drpashu.sdk.databinding.DialogFreeCallBinding;
 import com.drpashu.sdk.utils.Utils;
 

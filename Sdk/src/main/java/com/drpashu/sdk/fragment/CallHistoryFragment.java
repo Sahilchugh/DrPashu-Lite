@@ -1,4 +1,4 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.drpashu.sdk.R;
 import com.drpashu.sdk.adapter.CallHistoryInterface;
 import com.drpashu.sdk.adapter.CallHistoryListAdapter;
 import com.drpashu.sdk.databinding.FragmentCallHistoryBinding;

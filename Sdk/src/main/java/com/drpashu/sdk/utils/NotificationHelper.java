@@ -19,7 +19,7 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.drpashu.sdk.R;
-import com.drpashu.sdk.HomeActivity;
+import com.drpashu.sdk.activity.HomeActivity;
 
 public class NotificationHelper extends ContextWrapper {
 

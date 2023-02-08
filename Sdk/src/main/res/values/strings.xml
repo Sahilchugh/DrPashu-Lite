@@ -418,6 +418,7 @@
     <string name="error_create_reply">Something went wrong- 68</string>
     <string name="error_post_action">Something went wrong- 69</string>
     <string name="error_search_adda_posts">Something went wrong- 70</string>
+    <string name="error_add_user_from_sdk">Something went wrong- 71</string>
     <string name="add_mortality_toolbar">\tAdd Mortality</string>
     <string name="mortality_description">This module tracks the animal mortality (death) which may occur because of illness or similar reasons. This data is used to identify frequent diseases and prevent repetitions.</string>
     <string name="upload_image_note">Click on the image to upload Profile Picture</string>

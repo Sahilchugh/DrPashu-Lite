@@ -1,5 +1,6 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -11,20 +12,23 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.drpashu.sdk.R;
 import com.drpashu.sdk.network.Networking;
 import com.drpashu.sdk.network.NetworkingInterface;
 import com.drpashu.sdk.utils.PreferenceUtils;
 import com.drpashu.sdk.utils.Utils;
+import com.drpashu.sdk.network.NetworkingInterface;
 
 import java.io.File;
 import java.io.IOException;
 
-public class BaseFragment extends Fragment implements NetworkingInterface {
-    protected Context context;
-    protected HomeActivity activity;
+public class BaseActivity extends AppCompatActivity implements NetworkingInterface {
+    protected Context context = this;
+    protected Activity activity = this;
     protected Networking networking;
     protected PreferenceUtils preferenceUtils;
     protected Utils utils;
@@ -32,15 +36,9 @@ public class BaseFragment extends Fragment implements NetworkingInterface {
     private ProgressDialog progressDialog;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.context = getContext();
-        this.activity = (HomeActivity) getActivity();
-    }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
         networking = new Networking(context, activity, this);
         utils = new Utils(context, activity);
         preferenceUtils = new PreferenceUtils(context);
@@ -75,7 +73,7 @@ public class BaseFragment extends Fragment implements NetworkingInterface {
 
                 if (imageFile != null) {
                     Uri imageUri = FileProvider.getUriForFile(activity,
-                            "com.drpashu.sdk.fileprovider",
+                            "com.drpashu.app.fileprovider",
                             imageFile);
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
                     startActivityForResult(takePictureIntent, requestCode);

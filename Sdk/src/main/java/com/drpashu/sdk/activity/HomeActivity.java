@@ -1,6 +1,6 @@
-package com.drpashu.sdk;
+package com.drpashu.sdk.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.Intent;
@@ -10,7 +10,7 @@ import com.drpashu.sdk.databinding.ActivityHomeBinding;
 import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultWithDataListener;
 
-public class HomeActivity extends AppCompatActivity implements PaymentResultWithDataListener {
+public class HomeActivity extends BaseActivity implements PaymentResultWithDataListener{
     private ActivityHomeBinding binding;
 
     @Override
@@ -18,6 +18,24 @@ public class HomeActivity extends AppCompatActivity implements PaymentResultWith
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        if (getIntent() != null) {
+            if (getIntent().getExtras().getString("sdk") != null) {
+                showLoading();
+                networking.addUserFromSdk(getIntent().getExtras().getString("sdk"));
+            }
+        }
+    }
+
+    @Override
+    public <T> void networkingRequest(@Nullable MethodType methodType, boolean status, @Nullable T error, Object o) {
+        if (methodType == MethodType.addUserFromSdk && status)
+            dismissLoading();
+        else if (methodType == MethodType.addUserFromSdk && !status) {
+            dismissLoading();
+            utils.shortToast("Error Loading DrPashu App");
+            onBackPressed();
+        }
     }
 
     @Override
@@ -35,5 +53,4 @@ public class HomeActivity extends AppCompatActivity implements PaymentResultWith
         intent.putExtra("errorDetail", "Error Code - "+ i +"  Error Message - "+ paymentData.getData().toString());
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
-
 }
