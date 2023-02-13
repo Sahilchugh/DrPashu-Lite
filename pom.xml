@@ -5,7 +5,6 @@
   <groupId>com.drpashu.app</groupId>
   <artifactId>sdk</artifactId>
   <version>1.0.0</version>
-  <packaging>aar</packaging>
   <dependencies>
     <dependency>
       <groupId>androidx.databinding</groupId>
