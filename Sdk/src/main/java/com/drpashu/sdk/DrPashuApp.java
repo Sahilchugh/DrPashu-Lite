@@ -24,9 +24,10 @@ public class DrPashuApp implements DrPashuSdk{
     }
 
     @Override
-    public Intent openSdk(Activity activity, JSONObject jsonObject) {
+    public Intent openSdk(Activity activity, String screen, JSONObject jsonObject) {
         Intent intent = new Intent(activity, HomeActivity.class);
         intent.putExtra("sdk", jsonObject.toString());
+        intent.putExtra("screen", screen);
         return intent;
     }
 }

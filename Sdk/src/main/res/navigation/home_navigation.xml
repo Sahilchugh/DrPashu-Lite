@@ -56,12 +56,18 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_call_history"
-            app:destination="@id/nav_call_history" />
+            app:destination="@id/nav_call_history"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_nav_home_to_nav_my_wallet"
-            app:destination="@id/nav_my_wallet" />
+            app:destination="@id/nav_my_wallet"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_nav_home_to_nav_consult_doctor"
-            app:destination="@id/nav_consult_doctor" />
+            app:destination="@id/nav_consult_doctor"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>

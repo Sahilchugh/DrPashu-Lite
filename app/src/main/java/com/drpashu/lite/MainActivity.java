@@ -39,7 +39,30 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("district", "Palwal");
                 jsonObject.put("pincode", "121102");
 
-                startActivity(drPashuSdk.openSdk(this, jsonObject));
+                startActivity(drPashuSdk.openSdk(this, "consultDoctor", jsonObject));
+            } catch (JSONException e) {
+                Toast.makeText(this, "Error Loading Sdk", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
+        });
+
+        binding.buttonC.setOnClickListener(v -> {
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("api_key", "trial1206Key");
+                jsonObject.put("first_name", "Sahil");
+                jsonObject.put("last_name", "Chugh");
+                jsonObject.put("phone_number", "8929329112");
+                jsonObject.put("device_id", "test");
+                jsonObject.put("gender", "0");
+                jsonObject.put("location", "India APP");
+                jsonObject.put("country", "India");
+                jsonObject.put("state", "Haryana");
+                jsonObject.put("district", "Palwal");
+                jsonObject.put("pincode", "121102");
+
+                startActivity(drPashuSdk.openSdk(this, "callHistory", jsonObject));
             } catch (JSONException e) {
                 Toast.makeText(this, "Error Loading Sdk", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();

@@ -29,8 +29,12 @@ public class HomeActivity extends BaseActivity implements PaymentResultWithDataL
 
     @Override
     public <T> void networkingRequest(@Nullable MethodType methodType, boolean status, @Nullable T error, Object o) {
-        if (methodType == MethodType.addUserFromSdk && status)
+        if (methodType == MethodType.addUserFromSdk && status) {
             dismissLoading();
+            Intent intent = new Intent("screenNavigation");
+            intent.putExtra("screen", getIntent().getExtras().getString("screen"));
+            LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+        }
         else if (methodType == MethodType.addUserFromSdk && !status) {
             dismissLoading();
             utils.shortToast("Error Loading DrPashu App");
