@@ -139,7 +139,12 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
         checkout = new Checkout();
         checkout.setKeyID(getString(R.string.razorpay_key_id));
 
-        networking.getAnimals();
+//        networking.getAnimals();
+
+        animalType = preferenceUtils.getAnimal();
+        animalTypeByLanguage = preferenceUtils.getAnimal();
+        showLoading();
+        networking.getVetList(animalType);
 
         binding.proceedBtn.setOnClickListener(v -> {
             if (breedName.length() == 0)
@@ -148,7 +153,7 @@ public class ConsultDoctorFragment extends BaseFragment implements NetworkingInt
                 animalType = breedName;
                 animalTypeByLanguage = breedNameByLanguage;
                 showLoading();
-                networking.getVetList(farmId, farmName, breedName);
+                networking.getVetList(breedName);
             }
         });
 

@@ -38,8 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("state", "Haryana");
                 jsonObject.put("district", "Palwal");
                 jsonObject.put("pincode", "121102");
+                jsonObject.put("screen", "consultDoctor");
+                jsonObject.put("animal", "Cow");
+                // Cat Dog Sheep Goat Pig Buffalo Cow Chicken
 
-                startActivity(drPashuSdk.openSdk(this, "consultDoctor", jsonObject));
+                startActivity(drPashuSdk.openSdk(this, jsonObject));
             } catch (JSONException e) {
                 Toast.makeText(this, "Error Loading Sdk", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
@@ -61,8 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("state", "Haryana");
                 jsonObject.put("district", "Palwal");
                 jsonObject.put("pincode", "121102");
+                jsonObject.put("screen", "callHistory");
 
-                startActivity(drPashuSdk.openSdk(this, "callHistory", jsonObject));
+                startActivity(drPashuSdk.openSdk(this, jsonObject));
             } catch (JSONException e) {
                 Toast.makeText(this, "Error Loading Sdk", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();

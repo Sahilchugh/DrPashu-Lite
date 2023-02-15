@@ -38,4 +38,12 @@ public class PreferenceUtils {
     public void setFcmToken(String token){
         getPrefrence().edit().putString("fcm", token).apply();
     }
+
+    public String getAnimal(){
+        return getPrefrence().getString("animal", "Buffalo");
+    }
+
+    public void setAnimal(String animal){
+        getPrefrence().edit().putString("animal", animal).apply();
+    }
 }

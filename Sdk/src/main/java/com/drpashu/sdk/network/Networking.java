@@ -109,13 +109,8 @@ public class Networking {
         });
     }
 
-    public void getVetList(String lotId, String farmName, String breedName) {
-        Call<VetListResponse> vetListResponseCall;
-        if (farmName.length() == 0)
-            vetListResponseCall = apiInterface.getVetList(preferenceUtils.getUserId(), null, breedName);
-        else
-            vetListResponseCall = apiInterface.getVetList(preferenceUtils.getUserId(), lotId, null);
-
+    public void getVetList(String breedName) {
+        Call<VetListResponse> vetListResponseCall = apiInterface.getVetList(preferenceUtils.getUserId(), null, breedName);
         vetListResponseCall.enqueue(new Callback<VetListResponse>() {
             @Override
             public void onResponse(@NonNull Call<VetListResponse> call, @NonNull Response<VetListResponse> response) {

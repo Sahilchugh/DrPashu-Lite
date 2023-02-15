@@ -33,6 +33,8 @@ public class HomeActivity extends BaseActivity implements PaymentResultWithDataL
             dismissLoading();
             Intent intent = new Intent("screenNavigation");
             intent.putExtra("screen", getIntent().getExtras().getString("screen"));
+            if (getIntent().getExtras().getString("screen").equalsIgnoreCase("consultDoctor"))
+                preferenceUtils.setAnimal(getIntent().getExtras().getString("animal"));
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
         }
         else if (methodType == MethodType.addUserFromSdk && !status) {
