@@ -29,8 +29,6 @@ public class DrPashuApp implements DrPashuSdk{
         Intent intent = new Intent(activity, HomeActivity.class);
         intent.putExtra("sdk", jsonObject.toString());
         intent.putExtra("screen", jsonObject.getString("screen"));
-        if (jsonObject.getString("screen").equalsIgnoreCase("consultDoctor"))
-            intent.putExtra("animal", jsonObject.getString("animal"));
         return intent;
     }
 }

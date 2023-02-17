@@ -557,6 +557,8 @@ public class Networking {
             drPashuRequest.setState(jsonObject.getString("state"));
             drPashuRequest.setDistrict(jsonObject.getString("district"));
             drPashuRequest.setPincode(jsonObject.getString("pincode"));
+
+            preferenceUtils.setAnimal(jsonObject.getString("animal"));
         } catch (JSONException e) {
             e.printStackTrace();
             return;

@@ -31,6 +31,11 @@
         <action
             android:id="@+id/action_nav_history_to_callDetailFragment"
             app:destination="@id/callDetailFragment" />
+        <action
+            android:id="@+id/action_nav_call_history_to_nav_consult_doctor"
+            app:destination="@id/nav_consult_doctor"
+            app:popUpTo="@id/nav_call_history"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment

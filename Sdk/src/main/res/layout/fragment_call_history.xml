@@ -18,11 +18,70 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:visibility="gone"
+        android:visibility="visible"
         android:justificationMode="inter_word"
         android:text="@string/no_recent_call_history"
         android:textColor="@color/black"
+        android:layout_marginBottom="@dimen/normal_margin"
+        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@id/view"
         android:textSize="@dimen/normal_text"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/extra_large_margin"
+        android:layout_marginEnd="@dimen/extra_large_margin"
+        android:background="@color/light_grey"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/noHistoryText"
+        app:layout_constraintBottom_toTopOf="@id/needHelpText"/>
+
+    <TextView
+        android:id="@+id/needHelpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:justificationMode="inter_word"
+        android:text="Call our Vets for instant support"
+        android:textColor="@color/black"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintBottom_toTopOf="@id/consultDoctorBtn"
+        android:textSize="@dimen/normal_text"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/consultDoctorBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:background="@drawable/button_bg"
+        android:drawableEnd="@drawable/ic_call_doctor_result"
+        android:drawablePadding="@dimen/small_margin"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingStart="@dimen/large_margin"
+        android:paddingEnd="@dimen/large_margin"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@string/consult_a_doctor"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text"
+        android:visibility="visible"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/needHelpText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

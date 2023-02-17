@@ -50,6 +50,8 @@ public class CallHistoryFragment extends BaseFragment implements CallHistoryInte
             showLoading();
             networking.getCallHistoryList();
         }
+
+        binding.consultDoctorBtn.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_nav_call_history_to_nav_consult_doctor));
     }
 
     @Override

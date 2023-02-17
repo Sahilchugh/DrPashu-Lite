@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("district", "Palwal");
                 jsonObject.put("pincode", "121102");
                 jsonObject.put("screen", "callHistory");
+                jsonObject.put("animal", "Cow");
 
                 startActivity(drPashuSdk.openSdk(this, jsonObject));
             } catch (JSONException e) {
