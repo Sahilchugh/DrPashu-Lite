@@ -61,8 +61,12 @@ public class CallHistoryFragment extends BaseFragment implements CallHistoryInte
 
             List<CallHistoryListResponse.Data> callHistoryList = (List<CallHistoryListResponse.Data>) o;
 
-            if (callHistoryList.size() == 0)
+            if (callHistoryList.size() == 0) {
                 binding.noHistoryText.setVisibility(View.VISIBLE);
+                binding.view.setVisibility(View.VISIBLE);
+                binding.needHelpText.setVisibility(View.VISIBLE);
+                binding.consultDoctorBtn.setVisibility(View.VISIBLE);
+            }
 
             binding.historyRecyclerview.setLayoutManager(new LinearLayoutManager(context));
 
