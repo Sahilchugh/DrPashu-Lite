@@ -550,11 +550,12 @@ public class Networking {
             drPashuRequest.setFirst_name(jsonObject.getString("first_name"));
             drPashuRequest.setLast_name(jsonObject.getString("last_name"));
             drPashuRequest.setPhone_number(jsonObject.getString("phone_number"));
+            drPashuRequest.setGender(jsonObject.getString("gender"));
 
-            if (jsonObject.has("device"))
-                drPashuRequest.setDevice_id(jsonObject.getString("device_id"));
             if (jsonObject.has("gender"))
                 drPashuRequest.setGender(jsonObject.getString("gender"));
+            if (jsonObject.has("device"))
+                drPashuRequest.setDevice_id(jsonObject.getString("device_id"));
             if (jsonObject.has("location"))
                 drPashuRequest.setLocation(jsonObject.getString("location"));
             if (jsonObject.has("country"))

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("first_name", "Sahil");
                 jsonObject.put("last_name", "Chugh");
                 jsonObject.put("phone_number", "+918929329112");
+                jsonObject.put("gender", "0");
                 jsonObject.put("screen", "consultDoctor");
                 jsonObject.put("animal", "Cow");
 
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("first_name", "Sahil");
                 jsonObject.put("last_name", "Chugh");
                 jsonObject.put("phone_number", "+918929329112");
+                jsonObject.put("gender", "0");
+
                 jsonObject.put("screen", "consultDoctor");
                 jsonObject.put("animal", "Cow");
 
