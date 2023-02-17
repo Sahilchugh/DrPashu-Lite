@@ -30,16 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("api_key", "trial1206Key");
                 jsonObject.put("first_name", "Sahil");
                 jsonObject.put("last_name", "Chugh");
-                jsonObject.put("phone_number", "8929329112");
-                jsonObject.put("device_id", "test");
-                jsonObject.put("gender", "0");
-                jsonObject.put("location", "India APP");
-                jsonObject.put("country", "India");
-                jsonObject.put("state", "Haryana");
-                jsonObject.put("district", "Palwal");
-                jsonObject.put("pincode", "121102");
+                jsonObject.put("phone_number", "+918929329112");
                 jsonObject.put("screen", "consultDoctor");
                 jsonObject.put("animal", "Cow");
+
+//                jsonObject.put("device_id", "test");
+//                jsonObject.put("gender", "0");
+//                jsonObject.put("location", "India APP");
+//                jsonObject.put("country", "India");
+//                jsonObject.put("state", "Haryana");
+//                jsonObject.put("district", "Palwal");
+//                jsonObject.put("pincode", "121102");
                 // Cat Dog Sheep Goat Pig Buffalo Cow Chicken
 
                 startActivity(drPashuSdk.openSdk(this, jsonObject));
@@ -56,16 +57,18 @@ public class MainActivity extends AppCompatActivity {
                 jsonObject.put("api_key", "trial1206Key");
                 jsonObject.put("first_name", "Sahil");
                 jsonObject.put("last_name", "Chugh");
-                jsonObject.put("phone_number", "8929329112");
-                jsonObject.put("device_id", "test");
-                jsonObject.put("gender", "0");
-                jsonObject.put("location", "India APP");
-                jsonObject.put("country", "India");
-                jsonObject.put("state", "Haryana");
-                jsonObject.put("district", "Palwal");
-                jsonObject.put("pincode", "121102");
-                jsonObject.put("screen", "callHistory");
+                jsonObject.put("phone_number", "+918929329112");
+                jsonObject.put("screen", "consultDoctor");
                 jsonObject.put("animal", "Cow");
+
+//                jsonObject.put("device_id", "test");
+//                jsonObject.put("gender", "0");
+//                jsonObject.put("location", "India APP");
+//                jsonObject.put("country", "India");
+//                jsonObject.put("state", "Haryana");
+//                jsonObject.put("district", "Palwal");
+//                jsonObject.put("pincode", "121102");
+                // Cat Dog Sheep Goat Pig Buffalo Cow Chicken
 
                 startActivity(drPashuSdk.openSdk(this, jsonObject));
             } catch (JSONException e) {
